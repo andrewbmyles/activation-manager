@@ -1,0 +1,115 @@
+USER STORY 2.1.3: BUILD CRITERIA BUILDER INTERFACE
+==================================================
+
+As a campaign manager
+I want to build complex audience criteria with multiple conditions
+So that I can create precise audience segments for my campaigns
+
+Acceptance Criteria:
+- Add multiple criteria rows with AND logic
+- Remove individual criteria
+- Visual indication of logic operators
+- Empty state with clear CTA
+- Criteria displayed in readable format
+- Responsive layout for criteria rows
+- Clear visual hierarchy
+- Smooth animations for add/remove
+
+Story Points: 8
+
+Priority: P0 - Critical
+
+Dependencies:
+- 2.1.1 - Variable selector complete
+- 2.1.2 - Dynamic inputs complete
+- Design system components
+
+TECHNICAL TASKS:
+================
+
+2.1.3.1 - Create Criteria List Component
+-----------------------------------------
+- Build criteria container component
+- Implement state management for criteria array
+- Create unique ID generation for criteria
+- Handle empty state display
+- Add proper TypeScript interfaces
+- Time Estimate: 3 hours
+
+2.1.3.2 - Build Individual Criteria Row
+----------------------------------------
+- Create criteria row layout with:
+  - Variable selector (responsive width)
+  - Operator selector
+  - Value input(s)
+  - Remove button
+- Implement responsive grid layout
+- Add hover states and transitions
+- Time Estimate: 4 hours
+
+2.1.3.3 - Implement Add Criteria Functionality
+----------------------------------------------
+- Create "Add Criteria" button
+- Generate new criteria with defaults
+- Smooth scroll to new criteria
+- Auto-focus on variable selector
+- Animate new row appearance
+- Time Estimate: 2 hours
+
+2.1.3.4 - Add Remove Criteria Logic
+------------------------------------
+- Implement remove button functionality
+- Confirm deletion for last criteria
+- Animate row removal
+- Update indices after removal
+- Maintain form state integrity
+- Time Estimate: 2 hours
+
+2.1.3.5 - Create AND Logic Indicators
+--------------------------------------
+- Add visual AND separators between criteria
+- Style with proper spacing
+- Show only between criteria (not after last)
+- Consider future OR logic support
+- Time Estimate: 2 hours
+
+2.1.3.6 - Build Empty State
+----------------------------
+- Design engaging empty state
+- Add descriptive text
+- Include prominent "Add First Criteria" CTA
+- Use appropriate illustration/icon
+- Time Estimate: 2 hours
+
+2.1.3.7 - Implement Criteria Summary Display
+--------------------------------------------
+- Create readable criteria format
+- Handle long values with truncation
+- Show operator in friendly format
+- Display array values appropriately
+- Time Estimate: 3 hours
+
+2.1.3.8 - Add Validation and Error States
+-----------------------------------------
+- Validate complete criteria rows
+- Show inline validation errors
+- Prevent saving invalid criteria
+- Highlight incomplete fields
+- Clear error feedback
+- Time Estimate: 3 hours
+
+2.1.3.9 - Optimize for Performance
+-----------------------------------
+- Minimize re-renders on criteria changes
+- Implement proper React keys
+- Use React.memo where appropriate
+- Test with many criteria rows
+- Time Estimate: 2 hours
+
+Definition of Done:
+- Can add/remove unlimited criteria
+- All criteria types work correctly
+- Validation prevents invalid combinations
+- Responsive on desktop and tablet
+- Smooth animations and transitions
+- Accessibility standards met

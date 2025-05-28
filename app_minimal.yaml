@@ -1,0 +1,29 @@
+runtime: python311
+
+# Use default instance class for now
+instance_class: F1
+
+# Basic scaling
+automatic_scaling:
+  min_instances: 1
+  max_instances: 3
+
+# Environment variables
+env_variables:
+  FLASK_ENV: "production"
+  GAE_ENV: "standard"
+
+# Simple handlers
+handlers:
+# Serve React build static files
+- url: /static
+  static_dir: audience-manager/build/static
+  
+# Serve frontend index
+- url: /
+  static_files: audience-manager/build/index.html
+  upload: audience-manager/build/index.html
+
+# API and backend routes
+- url: /.*
+  script: auto

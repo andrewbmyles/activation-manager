@@ -1,0 +1,12 @@
+{
+  "generation_timestamp": "20250525_181400",
+  "records_generated": 100000,
+  "columns_generated": 5073,
+  "variables_by_source": {
+    "opticks": 4749,
+    "socialvalues": 272,
+    "prizm": 93,
+    "total": 5114
+  },
+  "file_size_mb": 1784.1
+}

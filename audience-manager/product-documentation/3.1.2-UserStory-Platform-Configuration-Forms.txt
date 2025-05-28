@@ -1,0 +1,55 @@
+User Story 3.1.2: Platform Configuration Forms
+
+As a Marketing Operations Manager
+I want to configure platform-specific settings and credentials
+So that I can establish secure connections to advertising platforms
+
+## Acceptance Criteria
+
+1. **Form Generation**
+   - Dynamic form fields based on platform requirements
+   - Proper input types (text, password, select, etc.)
+   - Field grouping by configuration type
+
+2. **Field Validation**
+   - Required field indicators
+   - Format validation (emails, URLs, IDs)
+   - Real-time validation feedback
+   - Error message display
+
+3. **Credential Management**
+   - Secure password field masking
+   - Option to show/hide sensitive data
+   - Test connection functionality
+   - Credential storage indication
+
+4. **Platform-Specific Fields**
+   - Meta: App ID, App Secret, Access Token
+   - Google: Customer ID, Developer Token, Manager Account ID
+   - LinkedIn: Organization ID, Access Token
+   - TikTok: Advertiser ID, Access Token
+   - Netflix: Partner ID, API Key
+   - The Trade Desk: Partner ID, API Token
+
+5. **User Experience**
+   - Clear field labels and descriptions
+   - Helpful placeholder text
+   - Link to platform documentation
+   - Save and cancel actions
+
+## Technical Requirements
+
+- React Hook Form for form management
+- Zod schema validation
+- Secure credential handling
+- Platform-specific form schemas
+- Responsive form layout
+
+## Definition of Done
+
+- [ ] Form fields render based on platform type
+- [ ] All validation rules implemented
+- [ ] Test connection functionality works
+- [ ] Forms are accessible (ARIA labels)
+- [ ] Unit tests for validation logic
+- [ ] Integration tests for form submission

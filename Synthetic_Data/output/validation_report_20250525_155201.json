@@ -1,0 +1,89 @@
+{
+  "summary": {
+    "total_records": 1000,
+    "total_columns": 5072,
+    "variables_from_metadata": 5114,
+    "timestamp": "2025-05-25T15:52:03.069994"
+  },
+  "postal_codes": {
+    "valid_format": true,
+    "unique_count": 1000,
+    "sample": [
+      "L8A 4L3",
+      "T7C 9M9",
+      "M5W 9Y2",
+      "T7V 5L9",
+      "V5H 4K2"
+    ]
+  },
+  "indices": {
+    "overall_mean": 135.11,
+    "outlier_percentage": 9.87,
+    "variables_checked": 100
+  },
+  "segments": {
+    "distribution_accuracy": {
+      "08": {
+        "actual": 13.9,
+        "expected": 13.63,
+        "difference": 0.27
+      },
+      "07": {
+        "actual": 12.8,
+        "expected": 8.85,
+        "difference": 3.95
+      },
+      "09": {
+        "actual": 11.2,
+        "expected": 12.37,
+        "difference": 1.17
+      },
+      "02": {
+        "actual": 11.1,
+        "expected": 10.82,
+        "difference": 0.28
+      },
+      "05": {
+        "actual": 10.8,
+        "expected": 11.62,
+        "difference": 0.82
+      },
+      "03": {
+        "actual": 9.0,
+        "expected": 9.09,
+        "difference": 0.09
+      },
+      "01": {
+        "actual": 8.8,
+        "expected": 8.52,
+        "difference": 0.28
+      },
+      "04": {
+        "actual": 8.1,
+        "expected": 9.7,
+        "difference": 1.6
+      },
+      "10": {
+        "actual": 7.2,
+        "expected": 7.31,
+        "difference": 0.11
+      },
+      "06": {
+        "actual": 7.1,
+        "expected": 8.1,
+        "difference": 1.0
+      }
+    },
+    "total_segments": 10
+  },
+  "quality_checks": {
+    "all_passed": false,
+    "failed_checks": [
+      "Overall mean (135.11) deviates from target (100)",
+      "Segment 07 distribution off by 3.95%",
+      "Segment 09 distribution off by 1.17%",
+      "Segment 04 distribution off by 1.60%",
+      "Segment 06 distribution off by 1.00%"
+    ]
+  }
+}

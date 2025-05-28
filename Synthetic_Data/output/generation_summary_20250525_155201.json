@@ -1,0 +1,49 @@
+{
+  "generation_timestamp": "20250525_155201",
+  "records_generated": 1000,
+  "columns_generated": 5072,
+  "variables_by_source": {
+    "opticks": 4749,
+    "socialvalues": 272,
+    "demographics": 0,
+    "prizm": 93,
+    "total_from_metadata": 5114
+  },
+  "sample_variables": {
+    "first_10": [
+      "PostalCode",
+      "LATITUDE",
+      "LONGITUDE",
+      "PRIZM_SEGMENT",
+      "NBAS12HP",
+      "Q470010C01",
+      "Q470010C02",
+      "Q470010C03",
+      "Q470010C04",
+      "Q470010C05"
+    ],
+    "last_10": [
+      "REG",
+      "REGNAME",
+      "CAN",
+      "CANNAME",
+      "PRFED13",
+      "FED13NAME",
+      "PRCDCCS",
+      "CCSNAME",
+      "PRER",
+      "ERNAME"
+    ]
+  },
+  "prizm_segments_used": 10,
+  "parameters": {
+    "mean": 100,
+    "min_value": 6,
+    "max_value": 1495,
+    "outlier_threshold": 250,
+    "outlier_percentage_target": 3.5,
+    "lognormal_mean": 4.605,
+    "lognormal_sigma": 0.4,
+    "spatial_correlation": 0.7
+  }
+}

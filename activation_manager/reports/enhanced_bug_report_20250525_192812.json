@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-05-25T19:28:12.711373",
+  "total_bugs": 0,
+  "by_severity": {
+    "Critical": 0,
+    "High": 0,
+    "Medium": 0,
+    "Low": 0
+  },
+  "bugs": []
+}

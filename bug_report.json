@@ -1,0 +1,632 @@
+{
+  "test_execution": {
+    "start_time": "2025-05-25T17:30:09.792721",
+    "end_time": "2025-05-25T17:30:17.610244",
+    "duration_seconds": 7.817523,
+    "modules_tested": 6
+  },
+  "summary": {
+    "total_bugs": 37,
+    "high_severity": 24,
+    "medium_severity": 5,
+    "low_severity": 8
+  },
+  "test_results": {
+    "test_enhanced_variable_selector": {
+      "passed": 0,
+      "failed": 0,
+      "errors": 12,
+      "skipped": 0,
+      "total": 12
+    },
+    "test_prizm_analyzer": {
+      "passed": 0,
+      "failed": 4,
+      "errors": 9,
+      "skipped": 0,
+      "total": 13
+    },
+    "test_constrained_k_medians": {
+      "passed": 13,
+      "failed": 2,
+      "errors": 3,
+      "skipped": 0,
+      "total": 18
+    },
+    "test_data_retriever": {
+      "passed": 16,
+      "failed": 6,
+      "errors": 0,
+      "skipped": 0,
+      "total": 22
+    },
+    "test_integrated_audience_handler": {
+      "passed": 18,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "total": 19
+    },
+    "test_unified_api": {
+      "passed": 19,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "total": 19
+    }
+  },
+  "bugs": [
+    {
+      "timestamp": "2025-05-25T17:30:10.321408",
+      "test_name": "test_analyze_request_basic (test_enhanced_variable_selector.TestEnhancedVariableSelector.test_analyze_request_basic)",
+      "bug_type": "Error",
+      "description": "'EnhancedVariableSelector' object has no attribute '_load_metadata'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 619, in run\n    self._callSetUp()\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 576, in _callSetUp\n    self.setUp()\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_enhanced_variable_selector.py\", line 50, in setUp\n    self.selector._load_metadata()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'EnhancedVariableSelector' object has no attribute '_load_metadata'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:10.399263",
+      "test_name": "test_analyze_request_empty (test_enhanced_variable_selector.TestEnhancedVariableSelector.test_analyze_request_empty)",
+      "bug_type": "Error",
+      "description": "'EnhancedVariableSelector' object has no attribute '_load_metadata'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 619, in run\n    self._callSetUp()\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 576, in _callSetUp\n    self.setUp()\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_enhanced_variable_selector.py\", line 50, in setUp\n    self.selector._load_metadata()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'EnhancedVariableSelector' object has no attribute '_load_metadata'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:10.478228",
+      "test_name": "test_analyze_request_no_matches (test_enhanced_variable_selector.TestEnhancedVariableSelector.test_analyze_request_no_matches)",
+      "bug_type": "Error",
+      "description": "'EnhancedVariableSelector' object has no attribute '_load_metadata'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 619, in run\n    self._callSetUp()\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 576, in _callSetUp\n    self.setUp()\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_enhanced_variable_selector.py\", line 50, in setUp\n    self.selector._load_metadata()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'EnhancedVariableSelector' object has no attribute '_load_metadata'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:10.556262",
+      "test_name": "test_category_scoring (test_enhanced_variable_selector.TestEnhancedVariableSelector.test_category_scoring)",
+      "bug_type": "Error",
+      "description": "'EnhancedVariableSelector' object has no attribute '_load_metadata'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 619, in run\n    self._callSetUp()\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 576, in _callSetUp\n    self.setUp()\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_enhanced_variable_selector.py\", line 50, in setUp\n    self.selector._load_metadata()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'EnhancedVariableSelector' object has no attribute '_load_metadata'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:10.634767",
+      "test_name": "test_diversity_enforcement (test_enhanced_variable_selector.TestEnhancedVariableSelector.test_diversity_enforcement)",
+      "bug_type": "Error",
+      "description": "'EnhancedVariableSelector' object has no attribute '_load_metadata'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 619, in run\n    self._callSetUp()\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 576, in _callSetUp\n    self.setUp()\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_enhanced_variable_selector.py\", line 50, in setUp\n    self.selector._load_metadata()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'EnhancedVariableSelector' object has no attribute '_load_metadata'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:10.712761",
+      "test_name": "test_fuzzy_matching (test_enhanced_variable_selector.TestEnhancedVariableSelector.test_fuzzy_matching)",
+      "bug_type": "Error",
+      "description": "'EnhancedVariableSelector' object has no attribute '_load_metadata'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 619, in run\n    self._callSetUp()\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 576, in _callSetUp\n    self.setUp()\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_enhanced_variable_selector.py\", line 50, in setUp\n    self.selector._load_metadata()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'EnhancedVariableSelector' object has no attribute '_load_metadata'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:10.790905",
+      "test_name": "test_keyword_matching (test_enhanced_variable_selector.TestEnhancedVariableSelector.test_keyword_matching)",
+      "bug_type": "Error",
+      "description": "'EnhancedVariableSelector' object has no attribute '_load_metadata'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 619, in run\n    self._callSetUp()\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 576, in _callSetUp\n    self.setUp()\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_enhanced_variable_selector.py\", line 50, in setUp\n    self.selector._load_metadata()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'EnhancedVariableSelector' object has no attribute '_load_metadata'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:10.870725",
+      "test_name": "test_metadata_loading (test_enhanced_variable_selector.TestEnhancedVariableSelector.test_metadata_loading)",
+      "bug_type": "Error",
+      "description": "'EnhancedVariableSelector' object has no attribute '_load_metadata'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 619, in run\n    self._callSetUp()\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 576, in _callSetUp\n    self.setUp()\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_enhanced_variable_selector.py\", line 50, in setUp\n    self.selector._load_metadata()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'EnhancedVariableSelector' object has no attribute '_load_metadata'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:10.948574",
+      "test_name": "test_score_ordering (test_enhanced_variable_selector.TestEnhancedVariableSelector.test_score_ordering)",
+      "bug_type": "Error",
+      "description": "'EnhancedVariableSelector' object has no attribute '_load_metadata'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 619, in run\n    self._callSetUp()\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 576, in _callSetUp\n    self.setUp()\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_enhanced_variable_selector.py\", line 50, in setUp\n    self.selector._load_metadata()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'EnhancedVariableSelector' object has no attribute '_load_metadata'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.028086",
+      "test_name": "test_top_n_limit (test_enhanced_variable_selector.TestEnhancedVariableSelector.test_top_n_limit)",
+      "bug_type": "Error",
+      "description": "'EnhancedVariableSelector' object has no attribute '_load_metadata'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 619, in run\n    self._callSetUp()\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 576, in _callSetUp\n    self.setUp()\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_enhanced_variable_selector.py\", line 50, in setUp\n    self.selector._load_metadata()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'EnhancedVariableSelector' object has no attribute '_load_metadata'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.105650",
+      "test_name": "test_real_metadata_loading (test_enhanced_variable_selector.TestEnhancedVariableSelectorIntegration.test_real_metadata_loading)",
+      "bug_type": "Error",
+      "description": "'EnhancedVariableSelector' object has no attribute '_load_metadata'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 619, in run\n    self._callSetUp()\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 576, in _callSetUp\n    self.setUp()\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_enhanced_variable_selector.py\", line 164, in setUp\n    self.selector._load_metadata()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'EnhancedVariableSelector' object has no attribute '_load_metadata'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.182431",
+      "test_name": "test_realistic_queries (test_enhanced_variable_selector.TestEnhancedVariableSelectorIntegration.test_realistic_queries)",
+      "bug_type": "Error",
+      "description": "'EnhancedVariableSelector' object has no attribute '_load_metadata'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 619, in run\n    self._callSetUp()\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 576, in _callSetUp\n    self.setUp()\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_enhanced_variable_selector.py\", line 164, in setUp\n    self.selector._load_metadata()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'EnhancedVariableSelector' object has no attribute '_load_metadata'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.185401",
+      "test_name": "test_analyze_segment_distribution_basic (test_prizm_analyzer.TestPRIZMAnalyzer.test_analyze_segment_distribution_basic)",
+      "bug_type": "Failure",
+      "description": "'segment_profiles' not found in {'error': 'No PRIZM_SEGMENT column found in data'}",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 47, in test_analyze_segment_distribution_basic\n    self.assertIn('segment_profiles', result)\n",
+        "AssertionError: 'segment_profiles' not found in {'error': 'No PRIZM_SEGMENT column found in data'}\n"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.185593",
+      "test_name": "test_behavioral_extraction (test_prizm_analyzer.TestPRIZMAnalyzer.test_behavioral_extraction)",
+      "bug_type": "Error",
+      "description": "'segment_profiles'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 186, in test_behavioral_extraction\n    for group_id, profile in result['segment_profiles'].items():\n                             ~~~~~~^^^^^^^^^^^^^^^^^^^^\n",
+        "KeyError: 'segment_profiles'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.185838",
+      "test_name": "test_diversity_score_calculation (test_prizm_analyzer.TestPRIZMAnalyzer.test_diversity_score_calculation)",
+      "bug_type": "Error",
+      "description": "'overall_summary'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 119, in test_diversity_score_calculation\n    uniform_diversity = uniform_result['overall_summary']['diversity_score']\n                        ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n",
+        "KeyError: 'overall_summary'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.186007",
+      "test_name": "test_dominant_segment_calculation (test_prizm_analyzer.TestPRIZMAnalyzer.test_dominant_segment_calculation)",
+      "bug_type": "Error",
+      "description": "'segment_profiles'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 80, in test_dominant_segment_calculation\n    group_0_segments = result['segment_profiles']['0']['dominant_segments']\n                       ~~~~~~^^^^^^^^^^^^^^^^^^^^\n",
+        "KeyError: 'segment_profiles'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.186424",
+      "test_name": "test_empty_data_handling (test_prizm_analyzer.TestPRIZMAnalyzer.test_empty_data_handling)",
+      "bug_type": "Failure",
+      "description": "'segment_profiles' not found in {'error': 'No PRIZM_SEGMENT column found in data'}",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 131, in test_empty_data_handling\n    self.assertIn('segment_profiles', result)\n",
+        "AssertionError: 'segment_profiles' not found in {'error': 'No PRIZM_SEGMENT column found in data'}\n"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.186590",
+      "test_name": "test_market_potential_calculation (test_prizm_analyzer.TestPRIZMAnalyzer.test_market_potential_calculation)",
+      "bug_type": "Error",
+      "description": "'overall_summary'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 175, in test_market_potential_calculation\n    market_potential = result['overall_summary']['market_potential_index']\n                       ~~~~~~^^^^^^^^^^^^^^^^^^^\n",
+        "KeyError: 'overall_summary'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.186753",
+      "test_name": "test_marketing_implications_generation (test_prizm_analyzer.TestPRIZMAnalyzer.test_marketing_implications_generation)",
+      "bug_type": "Error",
+      "description": "'segment_profiles'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 152, in test_marketing_implications_generation\n    for group_id, profile in result['segment_profiles'].items():\n                             ~~~~~~^^^^^^^^^^^^^^^^^^^^\n",
+        "KeyError: 'segment_profiles'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.186947",
+      "test_name": "test_missing_prizm_column (test_prizm_analyzer.TestPRIZMAnalyzer.test_missing_prizm_column)",
+      "bug_type": "Failure",
+      "description": "'segment_profiles' not found in {'error': 'No PRIZM_SEGMENT column found in data'}",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 145, in test_missing_prizm_column\n    self.assertIn('segment_profiles', result)\n",
+        "AssertionError: 'segment_profiles' not found in {'error': 'No PRIZM_SEGMENT column found in data'}\n"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.187113",
+      "test_name": "test_overall_summary (test_prizm_analyzer.TestPRIZMAnalyzer.test_overall_summary)",
+      "bug_type": "Error",
+      "description": "'overall_summary'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 86, in test_overall_summary\n    summary = result['overall_summary']\n              ~~~~~~^^^^^^^^^^^^^^^^^^^\n",
+        "KeyError: 'overall_summary'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.187258",
+      "test_name": "test_segment_profile_lookup (test_prizm_analyzer.TestPRIZMAnalyzer.test_segment_profile_lookup)",
+      "bug_type": "Error",
+      "description": "'PRIZMAnalyzer' object has no attribute '_get_segment_profile'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 161, in test_segment_profile_lookup\n    profile = self.analyzer._get_segment_profile('Young Digerati')\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'PRIZMAnalyzer' object has no attribute '_get_segment_profile'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.187414",
+      "test_name": "test_segment_profile_structure (test_prizm_analyzer.TestPRIZMAnalyzer.test_segment_profile_structure)",
+      "bug_type": "Error",
+      "description": "'segment_profiles'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 60, in test_segment_profile_structure\n    group_0_profile = result['segment_profiles']['0']\n                      ~~~~~~^^^^^^^^^^^^^^^^^^^^\n",
+        "KeyError: 'segment_profiles'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.187558",
+      "test_name": "test_segment_profiles_exist (test_prizm_analyzer.TestPRIZMAnalyzer.test_segment_profiles_exist)",
+      "bug_type": "Error",
+      "description": "'PRIZMAnalyzer' object has no attribute 'segment_profiles'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 32, in test_segment_profiles_exist\n    self.assertGreater(len(self.analyzer.segment_profiles), 0)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "AttributeError: 'PRIZMAnalyzer' object has no attribute 'segment_profiles'\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.189566",
+      "test_name": "test_large_dataset_performance (test_prizm_analyzer.TestPRIZMAnalyzerPerformance.test_large_dataset_performance)",
+      "bug_type": "Failure",
+      "description": "'segment_profiles' not found in {'error': 'No PRIZM_SEGMENT column found in data'}",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_prizm_analyzer.py\", line 225, in test_large_dataset_performance\n    self.assertIn('segment_profiles', result)\n",
+        "AssertionError: 'segment_profiles' not found in {'error': 'No PRIZM_SEGMENT column found in data'}\n"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:11.832343",
+      "test_name": "test_all_categorical_data (test_constrained_k_medians.TestConstrainedKMedians.test_all_categorical_data)",
+      "bug_type": "Error",
+      "description": "No objects to concatenate",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_constrained_k_medians.py\", line 136, in test_all_categorical_data\n    labels = self.clusterer.fit_predict(cat_only_data)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/audience_builder.py\", line 152, in fit_predict\n    data_numeric = pd.get_dummies(numeric_data, drop_first=True)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/opt/anaconda3/lib/python3.11/site-packages/pandas/core/reshape/encoding.py\", line 219, in get_dummies\n    result = concat(with_dummies, axis=1)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/opt/anaconda3/lib/python3.11/site-packages/pandas/core/reshape/concat.py\", line 380, in concat\n    op = _Concatenator(\n         ^^^^^^^^^^^^^^\n",
+        "  File \"/opt/anaconda3/lib/python3.11/site-packages/pandas/core/reshape/concat.py\", line 443, in __init__\n    objs, keys = self._clean_keys_and_objs(objs, keys)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/opt/anaconda3/lib/python3.11/site-packages/pandas/core/reshape/concat.py\", line 505, in _clean_keys_and_objs\n    raise ValueError(\"No objects to concatenate\")\n",
+        "ValueError: No objects to concatenate\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:12.588354",
+      "test_name": "test_empty_data_handling (test_constrained_k_medians.TestConstrainedKMedians.test_empty_data_handling)",
+      "bug_type": "Error",
+      "description": "division by zero",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_constrained_k_medians.py\", line 157, in test_empty_data_handling\n    self.clusterer.fit_predict(empty_data)\n",
+        "  File \"/Users/myles/Documents/Activation Manager/audience_builder.py\", line 144, in fit_predict\n    min_clusters = int(np.ceil(n_samples / max_cluster_size))\n                               ~~~~~~~~~~^~~~~~~~~~~~~~~~~~\n",
+        "ZeroDivisionError: division by zero\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:14.507594",
+      "test_name": "test_impossible_constraints (test_constrained_k_medians.TestConstrainedKMediansEdgeCases.test_impossible_constraints)",
+      "bug_type": "Error",
+      "description": "division by zero",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_constrained_k_medians.py\", line 225, in test_impossible_constraints\n    labels = impossible_clusterer.fit_predict(tiny_data)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/audience_builder.py\", line 144, in fit_predict\n    min_clusters = int(np.ceil(n_samples / max_cluster_size))\n                               ~~~~~~~~~~^~~~~~~~~~~~~~~~~~\n",
+        "ZeroDivisionError: division by zero\n"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:14.512008",
+      "test_name": "test_missing_values (test_constrained_k_medians.TestConstrainedKMediansEdgeCases.test_missing_values)",
+      "bug_type": "Failure",
+      "description": "'NaN' not found in 'input x contains nan.\\nkmeans does not accept missing values encoded as nan natively. for supervised learning, you might want to consider sklearn.ensemble.histgradientboostingclassifier and regressor which accept missing values encoded as nans natively. alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. see https://scikit-learn.org/stable/modules/impute.html you can find a list of all estimators that handle nan values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-valuesvalueerror'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_constrained_k_medians.py\", line 250, in test_missing_values\n    labels = self.clusterer.fit_predict(data_with_nan)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/audience_builder.py\", line 165, in fit_predict\n    initial_labels = kmeans.fit_predict(data_scaled)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/opt/anaconda3/lib/python3.11/site-packages/sklearn/cluster/_kmeans.py\", line 1033, in fit_predict\n    return self.fit(X, sample_weight=sample_weight).labels_\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/opt/anaconda3/lib/python3.11/site-packages/sklearn/cluster/_kmeans.py\", line 1417, in fit\n    X = self._validate_data(\n        ^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/opt/anaconda3/lib/python3.11/site-packages/sklearn/base.py\", line 565, in _validate_data\n    X = check_array(X, input_name=\"X\", **check_params)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+        "  File \"/opt/anaconda3/lib/python3.11/site-packages/sklearn/utils/validation.py\", line 921, in check_array\n    _assert_all_finite(\n",
+        "  File \"/opt/anaconda3/lib/python3.11/site-packages/sklearn/utils/validation.py\", line 161, in _assert_all_finite\n    raise ValueError(msg_err)\n",
+        "ValueError: Input X contains NaN.\nKMeans does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values\n",
+        "\nDuring handling of the above exception, another exception occurred:\n\n",
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_constrained_k_medians.py\", line 254, in test_missing_values\n    self.assertIn('NaN', str(e).lower() + str(type(e).__name__).lower())\n",
+        "AssertionError: 'NaN' not found in 'input x contains nan.\\nkmeans does not accept missing values encoded as nan natively. for supervised learning, you might want to consider sklearn.ensemble.histgradientboostingclassifier and regressor which accept missing values encoded as nans natively. alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. see https://scikit-learn.org/stable/modules/impute.html you can find a list of all estimators that handle nan values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-valuesvalueerror'\n"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:14.513163",
+      "test_name": "test_very_tight_constraints (test_constrained_k_medians.TestConstrainedKMediansEdgeCases.test_very_tight_constraints)",
+      "bug_type": "Failure",
+      "description": "None is not an instance of <class 'numpy.ndarray'>",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_constrained_k_medians.py\", line 212, in test_very_tight_constraints\n    self.assertIsInstance(labels, np.ndarray)\n",
+        "AssertionError: None is not an instance of <class 'numpy.ndarray'>\n"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:14.525933",
+      "test_name": "test_fetch_data_basic (test_data_retriever.TestDataRetriever.test_fetch_data_basic)",
+      "bug_type": "Failure",
+      "description": "7 != 3",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_data_retriever.py\", line 89, in test_fetch_data_basic\n    self.assertEqual(len(result.columns), len(variables))\n",
+        "AssertionError: 7 != 3\n"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:14.540631",
+      "test_name": "test_fetch_data_mixed_existing_nonexistent (test_data_retriever.TestDataRetriever.test_fetch_data_mixed_existing_nonexistent)",
+      "bug_type": "Failure",
+      "description": "Items in the first set but not the second:\n'PRIZM_SEGMENT'\n'LATITUDE'\n'PostalCode'\n'LONGITUDE'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_data_retriever.py\", line 137, in test_fetch_data_mixed_existing_nonexistent\n    self.assertEqual(set(result.columns), set(expected_vars))\n",
+        "AssertionError: Items in the first set but not the second:\n'PRIZM_SEGMENT'\n'LATITUDE'\n'PostalCode'\n'LONGITUDE'\n"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:14.545899",
+      "test_name": "test_fetch_data_nonexistent_variables (test_data_retriever.TestDataRetriever.test_fetch_data_nonexistent_variables)",
+      "bug_type": "Failure",
+      "description": "4 != 0",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_data_retriever.py\", line 126, in test_fetch_data_nonexistent_variables\n    self.assertEqual(len(result.columns), 0)\n",
+        "AssertionError: 4 != 0\n"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:14.562520",
+      "test_name": "test_fetch_data_with_sample_size (test_data_retriever.TestDataRetriever.test_fetch_data_with_sample_size)",
+      "bug_type": "Failure",
+      "description": "Items in the first set but not the second:\n'PRIZM_SEGMENT'\n'LATITUDE'\n'PostalCode'\n'LONGITUDE'",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_data_retriever.py\", line 103, in test_fetch_data_with_sample_size\n    self.assertEqual(set(result.columns), set(variables))\n",
+        "AssertionError: Items in the first set but not the second:\n'PRIZM_SEGMENT'\n'LATITUDE'\n'PostalCode'\n'LONGITUDE'\n"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:14.567229",
+      "test_name": "test_fetch_data_without_loading (test_data_retriever.TestDataRetriever.test_fetch_data_without_loading)",
+      "bug_type": "Failure",
+      "description": "AttributeError not raised",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_data_retriever.py\", line 175, in test_fetch_data_without_loading\n    with self.assertRaises(AttributeError):\n",
+        "AssertionError: AttributeError not raised\n"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:14.579928",
+      "test_name": "test_load_data_no_path (test_data_retriever.TestDataRetriever.test_load_data_no_path)",
+      "bug_type": "Failure",
+      "description": "(<class 'ValueError'>, <class 'AttributeError'>) not raised",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_data_retriever.py\", line 78, in test_load_data_no_path\n    with self.assertRaises((ValueError, AttributeError)):\n",
+        "AssertionError: (<class 'ValueError'>, <class 'AttributeError'>) not raised\n"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "timestamp": "2025-05-25T17:30:15.814414",
+      "test_name": "test_export_results_json (test_integrated_audience_handler.TestIntegratedAudienceHandler.test_export_results_json)",
+      "bug_type": "Failure",
+      "description": "{'error': 'No results to export'} is not an instance of <class 'str'>",
+      "traceback": [
+        "Traceback (most recent call last):\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 57, in testPartExecutor\n    yield\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 623, in run\n    self._callTestMethod(testMethod)\n",
+        "  File \"/opt/anaconda3/lib/python3.11/unittest/case.py\", line 579, in _callTestMethod\n    if method() is not None:\n       ^^^^^^^^\n",
+        "  File \"/Users/myles/Documents/Activation Manager/test_integrated_audience_handler.py\", line 272, in test_export_results_json\n    self.assertIsInstance(result, str)\n",
+        "AssertionError: {'error': 'No results to export'} is not an instance of <class 'str'>\n"
+      ],
+      "severity": "LOW"
+    }
+  ]
+}

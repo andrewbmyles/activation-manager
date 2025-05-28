@@ -1,0 +1,37 @@
+# Google App Engine configuration for Python backend
+runtime: python311
+instance_class: F2
+
+# Automatic scaling configuration
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 10
+  min_pending_latency: 30ms
+  max_pending_latency: automatic
+  max_concurrent_requests: 50
+
+# Environment variables
+env_variables:
+  FLASK_ENV: "production"
+  DATA_PATH: "/tmp/synthetic_data.csv"
+
+# Handlers for the API
+handlers:
+- url: /api/.*
+  script: auto
+  secure: always
+
+- url: /health
+  script: auto
+  secure: always
+
+# VPC connector for Cloud SQL access (if needed)
+vpc_access_connector:
+  name: projects/YOUR_PROJECT_ID/locations/YOUR_REGION/connectors/YOUR_CONNECTOR_NAME
+
+# Resources
+resources:
+  cpu: 2
+  memory_gb: 2.3
+  disk_size_gb: 10

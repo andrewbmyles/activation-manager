@@ -1,0 +1,62 @@
+# Ignore node_modules and build artifacts
+node_modules/
+build/
+dist/
+*.log
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Ignore environment files
+.env
+.env.*
+!.env.example
+
+# Ignore version control
+.git/
+.gitignore
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore test and coverage files
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# Ignore documentation
+*.md
+docs/
+
+# Ignore large data files
+data/
+*.csv
+*.xlsx
+*.xls
+Synthetic_Data/
+
+# Ignore deployment files not needed in container
+kubernetes/
+docker-compose.yml
+vercel.json
+netlify.toml
+
+# Ignore other unnecessary files
+Style/
+scripts/
+public/
+*.test.*
+*.spec.*

@@ -1,0 +1,111 @@
+USER STORY 2.1.1: BUILD VARIABLE SELECTOR COMPONENT
+===================================================
+
+As a campaign manager
+I want to select variables from organized categories with search functionality
+So that I can quickly find and choose the right targeting criteria
+
+Acceptance Criteria:
+- Dropdown component with 50+ variables organized by category
+- Categories: Demographics, Behavioral, Geographic, Technographic, Transactional, Engagement, Custom
+- Real-time search across variable names, descriptions, and categories
+- Visual hierarchy with indentation for subcategories
+- Tooltips showing variable descriptions
+- Data type indicators for each variable
+- Keyboard navigation support
+- Selected variable highlighted
+
+Story Points: 8
+
+Priority: P0 - Critical
+
+Dependencies:
+- Variable metadata structure defined
+- Design system components available
+
+TECHNICAL TASKS:
+================
+
+2.1.1.1 - Create Variable Metadata Structure
+--------------------------------------------
+- Define TypeScript interfaces for VariableMetadata
+- Create comprehensive variable dataset with:
+  - Unique IDs, names, categories
+  - Data types (string, number, boolean, date, array)
+  - Available operators per variable
+  - Hierarchy levels for organization
+  - Sort order within categories
+  - Example values and tooltips
+- Organize 50+ variables across 7 categories
+- Time Estimate: 4 hours
+
+2.1.1.2 - Build VariableSelector Component
+-------------------------------------------
+- Create dropdown component with search input
+- Implement click-outside-to-close behavior
+- Add loading and empty states
+- Style with Envision design system
+- Implement controlled component pattern
+- Time Estimate: 5 hours
+
+2.1.1.3 - Implement Category Organization
+-----------------------------------------
+- Create collapsible category sections
+- Add category headers with counts
+- Implement expand/collapse functionality
+- Show all categories when searching
+- Add chevron rotation animations
+- Time Estimate: 4 hours
+
+2.1.1.4 - Add Search Functionality
+----------------------------------
+- Implement fuzzy search across multiple fields
+- Highlight matching text in results
+- Show "no results" message
+- Auto-focus search on dropdown open
+- Clear search on selection
+- Time Estimate: 3 hours
+
+2.1.1.5 - Implement Visual Hierarchy
+-------------------------------------
+- Add indentation for hierarchy levels
+- Create subcategory visual indicators
+- Implement sort order logic
+- Style selected state
+- Add hover effects
+- Time Estimate: 3 hours
+
+2.1.1.6 - Add Tooltips and Metadata Display
+--------------------------------------------
+- Create tooltip component for info icons
+- Display variable descriptions
+- Show example values
+- Add data type badges
+- Implement tooltip positioning logic
+- Time Estimate: 4 hours
+
+2.1.1.7 - Implement Keyboard Navigation
+----------------------------------------
+- Add arrow key navigation
+- Implement Enter to select
+- Escape to close dropdown
+- Tab navigation support
+- Maintain focus management
+- Time Estimate: 3 hours
+
+2.1.1.8 - Optimize Performance
+-------------------------------
+- Implement virtual scrolling for large lists
+- Memoize filtered results
+- Optimize re-renders
+- Add loading states
+- Test with all 50+ variables
+- Time Estimate: 3 hours
+
+Definition of Done:
+- All 50+ variables organized and searchable
+- Keyboard navigation fully functional
+- Performance targets met (<100ms search)
+- Accessibility standards met
+- Cross-browser testing complete
+- Component documented with examples

@@ -1,0 +1,96 @@
+USER STORY 1.1.3: CREATE NAVIGATION SHELL AND LAYOUT
+====================================================
+
+As a user
+I want a consistent navigation shell with sidebar and content area
+So that I can easily navigate between different sections of the application
+
+Acceptance Criteria:
+- Fixed sidebar with navigation items and icons
+- Collapsible/expandable sidebar on smaller screens
+- Active state indication for current page
+- User profile section with avatar and name
+- Smooth transitions between pages
+- Responsive layout for desktop and tablet
+
+Story Points: 5
+
+Priority: P0 - Critical
+
+Dependencies:
+- 1.1.2 - Design system implementation complete
+- Navigation structure approved
+
+TECHNICAL TASKS:
+================
+
+1.1.3.1 - Create Layout Component Structure
+-------------------------------------------
+- Build Layout.tsx component with sidebar and main content
+- Implement responsive grid layout
+- Create sidebar width constants (280px desktop, collapsible mobile)
+- Add proper semantic HTML structure
+- Time Estimate: 3 hours
+
+1.1.3.2 - Implement Navigation Menu
+------------------------------------
+- Create navigation items array with:
+  - Dashboard (Home icon)
+  - Audiences (Users icon)
+  - Platforms (Monitor icon)
+  - Distribution (Share2 icon)
+  - Analytics (BarChart3 icon)
+- Build NavItem component with hover and active states
+- Implement React Router NavLink integration
+- Add keyboard navigation support
+- Time Estimate: 4 hours
+
+1.1.3.3 - Build User Profile Section
+-------------------------------------
+- Create user profile component in sidebar header
+- Implement avatar with image fallback to initials
+- Add user name and role display
+- Create dropdown menu trigger (future enhancement)
+- Handle profile image loading errors gracefully
+- Time Estimate: 3 hours
+
+1.1.3.4 - Add Logo and Branding
+--------------------------------
+- Create logo component with Target icon
+- Add "Activation Manager" branding text
+- Implement tagline "Audience Distribution Platform"
+- Ensure proper sizing and spacing
+- Time Estimate: 2 hours
+
+1.1.3.5 - Implement Routing Structure
+-------------------------------------
+- Setup React Router with Layout as parent route
+- Configure child routes for each navigation item
+- Implement route guards (future auth)
+- Add 404 page handling
+- Setup route transitions
+- Time Estimate: 3 hours
+
+1.1.3.6 - Add Sidebar Footer Actions
+-------------------------------------
+- Create Settings and Help & Support buttons
+- Position at bottom of sidebar
+- Add proper icons and hover states
+- Prepare for future functionality
+- Time Estimate: 2 hours
+
+1.1.3.7 - Implement Responsive Behavior
+----------------------------------------
+- Add mobile menu toggle button
+- Implement sidebar overlay on mobile
+- Create useMediaQuery hook
+- Test on various screen sizes
+- Time Estimate: 4 hours
+
+Definition of Done:
+- Navigation works on all target screen sizes
+- All routes load correct components
+- Active states display correctly
+- No console errors or warnings
+- Keyboard navigation functional
+- Cross-browser testing complete

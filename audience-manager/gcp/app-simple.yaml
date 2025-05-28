@@ -1,0 +1,26 @@
+# Simplified App Engine configuration without Secret Manager
+runtime: python311
+instance_class: F2
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 10
+
+env_variables:
+  FLASK_ENV: "production"
+  PROJECT_ID: "feisty-catcher-461000-g2"
+
+handlers:
+- url: /api/.*
+  script: auto
+  secure: always
+
+- url: /health
+  script: auto
+  secure: always
+
+resources:
+  cpu: 2
+  memory_gb: 2.3
+  disk_size_gb: 10

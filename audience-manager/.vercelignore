@@ -1,0 +1,56 @@
+# Python files
+*.py
+*.pyc
+__pycache__/
+venv/
+.venv/
+requirements.txt
+
+# Backend directories
+api/
+gcp/
+simple-backend/
+test-deploy/
+
+# Scripts
+*.sh
+
+# Docker files
+Dockerfile*
+docker-compose.yml
+nginx*.conf
+
+# Kubernetes
+kubernetes/
+
+# Build tools
+netlify.toml
+app.yaml
+cloudbuild.yaml
+
+# Documentation
+docs/
+product-documentation/
+*.md
+
+# Test files
+*.test.*
+*.spec.*
+
+# Source control
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp
+deploy-temp/
+api-deploy/

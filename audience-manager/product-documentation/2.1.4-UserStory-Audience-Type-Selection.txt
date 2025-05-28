@@ -1,0 +1,54 @@
+User Story 2.1.4: Audience Type Selection
+
+As a Marketing Operations Manager
+I want to categorize audiences by data source type and identifier
+So that I can properly manage data governance and platform compatibility
+
+## Acceptance Criteria
+
+1. **Audience Type Selection**
+   - Three primary types: 1st Party, 3rd Party, Clean Room
+   - Clear type descriptions and use cases
+   - Required selection during audience creation
+   - Type displayed on audience cards
+
+2. **Data Source Subtypes**
+   - 1st Party options: RampID, UID2.0, Google PAIR, Yahoo! Connect, MAID
+   - 3rd Party options: Postal Code, PRIZM Segment
+   - Clean Room options: PartnerID
+   - Dynamic subtype options based on selected type
+
+3. **Form Integration**
+   - Type selection before criteria definition
+   - Subtype automatically updates when type changes
+   - Form validation for required fields
+   - Clear visual hierarchy in form layout
+
+4. **Data Storage**
+   - Type and subtype stored with audience record
+   - Historical tracking of data source changes
+   - Migration support for existing audiences
+   - Export includes type information
+
+5. **Display and Filtering**
+   - Type badges on audience cards
+   - Filter audiences by type
+   - Sort by data source
+   - Type-specific icons or colors
+
+## Technical Requirements
+
+- TypeScript interfaces for type safety
+- Form validation with React Hook Form
+- Database schema updates
+- Backward compatibility for existing data
+- Responsive form layout
+
+## Definition of Done
+
+- [x] Type selection implemented in audience builder
+- [x] All subtypes available per type
+- [x] Form validation working correctly
+- [x] Type displayed on audience cards
+- [x] Data persistence functional
+- [ ] Unit tests for type selection logic
