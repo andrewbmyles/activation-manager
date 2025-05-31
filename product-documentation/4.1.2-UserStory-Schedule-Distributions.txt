@@ -1,0 +1,55 @@
+User Story 4.1.2: Schedule Distributions
+
+As a Campaign Manager
+I want to schedule audience distributions for specific times
+So that I can ensure audiences are updated at optimal times for campaigns
+
+## Acceptance Criteria
+
+1. **Schedule Types**
+   - One-time execution
+   - Daily recurring
+   - Weekly recurring
+   - Monthly recurring
+   - Custom cron expressions
+
+2. **Time Configuration**
+   - Date and time picker
+   - Time zone selection
+   - Business hours constraints
+   - Holiday calendar integration
+
+3. **Recurrence Options**
+   - End date specification
+   - Maximum occurrence count
+   - Skip weekends option
+   - Blackout dates configuration
+
+4. **Schedule Preview**
+   - Next 10 run times display
+   - Calendar view of scheduled runs
+   - Conflict detection
+   - Resource availability check
+
+5. **Schedule Management**
+   - Pause/resume schedules
+   - Edit existing schedules
+   - Delete with confirmation
+   - Schedule history view
+
+## Technical Requirements
+
+- Cron job scheduler integration
+- Time zone conversion library
+- Calendar component for visualization
+- Conflict detection algorithm
+- Schedule persistence layer
+
+## Definition of Done
+
+- [ ] All schedule types can be created
+- [ ] Time zone handling works correctly
+- [ ] Recurrence patterns calculate accurately
+- [ ] Schedule preview shows correct times
+- [ ] Schedules execute at specified times
+- [ ] Integration tests for scheduler

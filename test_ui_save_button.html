@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test UI Save Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #2563eb;
+        }
+        button:disabled {
+            background-color: #94a3b8;
+            cursor: not-allowed;
+        }
+        .success {
+            color: #10b981;
+            margin-top: 20px;
+        }
+        .error {
+            color: #ef4444;
+            margin-top: 20px;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+        .info {
+            background-color: #eff6ff;
+            border: 1px solid #3b82f6;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Save Audience Button</h1>
+        
+        <div class="info">
+            <p><strong>This test simulates the Save button functionality from the React app.</strong></p>
+            <p>When you click the button, it will:</p>
+            <ol>
+                <li>Create a sample audience with segments and variables</li>
+                <li>Send it to the /api/audiences endpoint</li>
+                <li>Display the response</li>
+            </ol>
+        </div>
+
+        <button id="saveButton" onclick="saveAudience()">
+            💾 Save Audience
+        </button>
+        
+        <button id="listButton" onclick="listAudiences()">
+            📋 List Saved Audiences
+        </button>
+
+        <div id="status"></div>
+        <div id="response" class="response" style="display: none;"></div>
+    </div>
+
+    <script>
+        const API_BASE = window.location.origin;
+
+        async function saveAudience() {
+            const button = document.getElementById('saveButton');
+            const status = document.getElementById('status');
+            const responseDiv = document.getElementById('response');
+            
+            button.disabled = true;
+            status.className = '';
+            status.textContent = 'Saving audience...';
+            
+            const audienceData = {
+                user_id: 'demo_user',
+                name: `Audience - ${new Date().toLocaleDateString()}`,
+                description: 'Environmentally conscious millennials with high disposable income',
+                data_type: 'first_party',
+                original_query: 'environmentally conscious millennials with high income',
+                selected_variables: ['ENV_CONSCIOUS', 'AGE_25_34', 'INCOME_100K_PLUS', 'URBAN_RESIDENT'],
+                variable_details: [
+                    {
+                        code: 'ENV_CONSCIOUS',
+                        description: 'Environmentally Conscious',
+                        relevance_score: 0.95,
+                        type: 'psychographic',
+                        category: 'Psychographic'
+                    },
+                    {
+                        code: 'AGE_25_34',
+                        description: 'Age 25-34 (Millennials)',
+                        relevance_score: 0.90,
+                        type: 'demographic',
+                        category: 'Demographics'
+                    }
+                ],
+                segments: [
+                    {
+                        segment_id: 0,
+                        name: 'Eco-Forward Innovators',
+                        size: 125000,
+                        size_percentage: 8.2,
+                        characteristics: { avg_income: '$120,000' },
+                        prizm_segments: ['Young Digerati']
+                    },
+                    {
+                        segment_id: 1,
+                        name: 'Sustainable Lifestyle Leaders',
+                        size: 98000,
+                        size_percentage: 6.4,
+                        characteristics: { avg_income: '$105,000' },
+                        prizm_segments: ['Urban Achievers']
+                    }
+                ],
+                total_audience_size: 223000,
+                status: 'active',
+                metadata: {
+                    created_from: 'test_ui',
+                    session_id: 'test-' + Date.now()
+                }
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/api/audiences`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(audienceData)
+                });
+
+                const result = await response.json();
+                
+                responseDiv.style.display = 'block';
+                responseDiv.textContent = JSON.stringify(result, null, 2);
+                
+                if (response.ok && result.success) {
+                    status.className = 'success';
+                    status.textContent = `✅ Audience saved successfully! ID: ${result.audience_id}`;
+                } else {
+                    status.className = 'error';
+                    status.textContent = `❌ Failed to save audience: ${result.error || response.statusText}`;
+                }
+            } catch (error) {
+                status.className = 'error';
+                status.textContent = `❌ Error: ${error.message}`;
+                responseDiv.style.display = 'block';
+                responseDiv.textContent = error.toString();
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        async function listAudiences() {
+            const button = document.getElementById('listButton');
+            const status = document.getElementById('status');
+            const responseDiv = document.getElementById('response');
+            
+            button.disabled = true;
+            status.className = '';
+            status.textContent = 'Fetching audiences...';
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/audiences?user_id=demo_user`);
+                const result = await response.json();
+                
+                responseDiv.style.display = 'block';
+                responseDiv.textContent = JSON.stringify(result, null, 2);
+                
+                if (response.ok && result.success) {
+                    status.className = 'success';
+                    status.textContent = `✅ Found ${result.count || 0} audiences`;
+                } else {
+                    status.className = 'error';
+                    status.textContent = `❌ Failed to list audiences: ${result.error || response.statusText}`;
+                }
+            } catch (error) {
+                status.className = 'error';
+                status.textContent = `❌ Error: ${error.message}`;
+                responseDiv.style.display = 'block';
+                responseDiv.textContent = error.toString();
+            } finally {
+                button.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Exclude everything by default
+*
+
+# Include only essential files
+!app.yaml
+!main.py
+!requirements.txt

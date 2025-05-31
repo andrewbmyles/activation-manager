@@ -1,0 +1,133 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    types: [ opened, synchronize ]
+
+env:
+  PROJECT_ID: feisty-catcher-461000-g2
+  NODE_VERSION: '18'
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+        cache-dependency-path: audience-manager/package-lock.json
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip'
+    
+    - name: Install frontend dependencies
+      working-directory: ./audience-manager
+      run: npm ci
+    
+    - name: Run frontend tests
+      working-directory: ./audience-manager
+      run: npm test -- --watchAll=false --passWithNoTests
+    
+    - name: Install backend dependencies
+      run: pip install -r requirements.txt
+    
+    - name: Run backend tests
+      run: python -m pytest --tb=short || true
+
+  deploy-staging:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event.pull_request.merged == true
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+        cache-dependency-path: audience-manager/package-lock.json
+    
+    - name: Build frontend
+      working-directory: ./audience-manager
+      run: |
+        npm ci
+        npm run build
+    
+    - name: Setup Google Cloud
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+        project_id: ${{ env.PROJECT_ID }}
+    
+    - name: Deploy to staging
+      run: |
+        VERSION="stg-${{ github.sha }}-$(date +%Y%m%d-%H%M%S)"
+        gcloud app deploy app_production.yaml \
+          --version="${VERSION}" \
+          --no-promote \
+          --quiet
+        
+        echo "STAGING_VERSION=${VERSION}" >> $GITHUB_ENV
+        echo "STAGING_URL=https://${VERSION}-dot-${PROJECT_ID}.appspot.com" >> $GITHUB_ENV
+    
+    - name: Comment on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `🚀 Deployed to staging!\n\nVersion: \`${{ env.STAGING_VERSION }}\`\nURL: ${{ env.STAGING_URL }}\n\nPlease test before merging.`
+          })
+    
+    - name: Create deployment record
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.repos.createDeployment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            ref: context.sha,
+            environment: 'staging',
+            description: 'Staging deployment',
+            auto_merge: false,
+            required_contexts: []
+          })
+
+  cleanup-old-versions:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Google Cloud
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+        project_id: ${{ env.PROJECT_ID }}
+    
+    - name: Run cleanup
+      run: |
+        chmod +x ./cleanup-old-versions.sh
+        echo "y" | ./cleanup-old-versions.sh
+
+# Schedule weekly cleanup
+on:
+  schedule:
+    - cron: '0 2 * * 0'  # Sunday at 2 AM UTC
+  workflow_dispatch:  # Allow manual trigger

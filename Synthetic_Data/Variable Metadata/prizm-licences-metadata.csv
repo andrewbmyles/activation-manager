@@ -1,0 +1,102 @@
+﻿Order,Variable,Description,Type,Size,Table
+1,FSALDU,Postal Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+2,LATITUDE,EA Enhanced Y-Coordinate,Double,8,PRIZM_Rural_Enhanced_License_202401_GEO
+3,LONGITUDE,EA Enhanced X-Coordinate,Double,8,PRIZM_Rural_Enhanced_License_202401_GEO
+4,COMMNAME,Community Name,V_WString,100,PRIZM_Rural_Enhanced_License_202401_GEO
+5,CNLI,Community Name Indicator,V_String,1,PRIZM_Rural_Enhanced_License_202401_GEO
+6,SLI,Single Link Indicator,V_String,1,PRIZM_Rural_Enhanced_License_202401_GEO
+7,RETIRED,Retired Postal Code Indicator,V_String,1,PRIZM_Rural_Enhanced_License_202401_GEO
+8,ACTIVE,Active Postal Code Indicator,V_String,1,PRIZM_Rural_Enhanced_License_202401_GEO
+9,BUSINESS,Business Postal Code Indicator,V_String,1,PRIZM_Rural_Enhanced_License_202401_GEO
+10,APARTMENT,Apartment Postal Code Indicator,V_String,1,PRIZM_Rural_Enhanced_License_202401_GEO
+11,POBOX,Post Office Box Postal Code Indicator,V_String,1,PRIZM_Rural_Enhanced_License_202401_GEO
+12,INDEMO,Postal Code has demographic data,V_String,1,PRIZM_Rural_Enhanced_License_202401_GEO
+13,PRIZM,PRIZM Segment Code,V_String,2,PRIZM_Rural_Enhanced_License_202401_GEO
+14,NAME,PRIZM Segment Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+15,SG,Social Group Code,V_String,2,PRIZM_Rural_Enhanced_License_202401_GEO
+16,SGNAME,Social Group Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+17,SGSort,Social Group Sort,Int32,4,PRIZM_Rural_Enhanced_License_202401_GEO
+18,LS,Lifestage Code,V_String,3,PRIZM_Rural_Enhanced_License_202401_GEO
+19,LSNAME,Lifestage Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+20,LSSort,Lifestage Sort,Int32,4,PRIZM_Rural_Enhanced_License_202401_GEO
+21,PRCDDA,Dissemination Area (2021) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+22,PRCDADA,Aggregate Dissemination Area (2021) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+23,PRCDCSD,Census Subdivision (2021) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+24,CSDNAME,Census Subdivision (2021) Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+25,CSDTYPE,Census Subdivision (2021) Type,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+26,CSDTYPEN,Census Subdivision (2021) Type Description,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+27,PRCD,Census Division (2021) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+28,CDNAME,Census Division (2021) Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+29,CDTYPE,Census Division (2021) Type,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+30,CDTYPEN,Census Division (2021) Type Description,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+31,PR,Province (2021) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+32,PRNAME,Province (2021) Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+33,PRABB,Province (2021) Abbreviation,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+34,CMACT,Census Tract (2021) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+35,CTNAME,Census Tract (2021) Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+36,CMACA,Census Metropolitan Area/Census Agglomeration (2021) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+37,CMANAME,Census Metropolitan Area/Census Agglomeration (2021) Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+38,CMATYPE,Census Metropolitan Area/Census Agglomeration (2021) Type,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+39,CMATYPEN,Census Metropolitan Area/Census Agglomeration (2021) Type Description,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+40,PRCMA,Census Metropolitan Area/Census Agglomeration (2021) (Provincial Split) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+41,PRCMANAME,Census Metropolitan Area/Census Agglomeration (2021) (Provincial Split) Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+42,REG,Region (2021) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+43,REGNAME,Region (2021) Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+44,CAN,Country (2021) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+45,CANNAME,Country (2021) Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+46,PRFED13,Federal Electoral District (2013) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+47,FED13NAME,Federal Electoral District (2013) Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+48,PRCDCCS,Census Consolidated Subdivision (2021) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+49,CCSNAME,Census Consolidated Subdivision (2021) Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+50,PRER,Economic Region (2021) SGC Code,V_String,16,PRIZM_Rural_Enhanced_License_202401_GEO
+51,ERNAME,Economic Region (2021) Name,V_String,100,PRIZM_Rural_Enhanced_License_202401_GEO
+1,FSALDU,Postal Code,V_String,16,PRIZM_Unique_License_202401_GEO
+2,LATITUDE,EA Enhanced Y-Coordinate,Double,8,PRIZM_Unique_License_202401_GEO
+3,LONGITUDE,EA Enhanced X-Coordinate,Double,8,PRIZM_Unique_License_202401_GEO
+4,COMMNAME,Community Name,V_WString,100,PRIZM_Unique_License_202401_GEO
+5,SLI,Single Link Indicator,V_String,1,PRIZM_Unique_License_202401_GEO
+6,RETIRED,Retired Postal Code Indicator,V_String,1,PRIZM_Unique_License_202401_GEO
+7,ACTIVE,Active Postal Code Indicator,V_String,1,PRIZM_Unique_License_202401_GEO
+8,BUSINESS,Business Postal Code Indicator,V_String,1,PRIZM_Unique_License_202401_GEO
+9,APARTMENT,Apartment Postal Code Indicator,V_String,1,PRIZM_Unique_License_202401_GEO
+10,POBOX,Post Office Box Postal Code Indicator,V_String,1,PRIZM_Unique_License_202401_GEO
+11,INDEMO,Postal Code has demographic data,V_String,1,PRIZM_Unique_License_202401_GEO
+12,PRIZM,PRIZM Segment Code,V_String,2,PRIZM_Unique_License_202401_GEO
+13,NAME,PRIZM Segment Name,V_String,100,PRIZM_Unique_License_202401_GEO
+14,SG,Social Group Code,V_String,2,PRIZM_Unique_License_202401_GEO
+15,SGNAME,Social Group Name,V_String,100,PRIZM_Unique_License_202401_GEO
+16,SGSort,Social Group Sort,Int32,4,PRIZM_Unique_License_202401_GEO
+17,LS,Lifestage Code,V_String,3,PRIZM_Unique_License_202401_GEO
+18,LSNAME,Lifestage Name,V_String,100,PRIZM_Unique_License_202401_GEO
+19,LSSort,Lifestage Sort,Int32,4,PRIZM_Unique_License_202401_GEO
+20,PRCDDA,Dissemination Area (2021) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+21,PRCDADA,Aggregate Dissemination Area (2021) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+22,PRCDCSD,Census Subdivision (2021) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+23,CSDNAME,Census Subdivision (2021) Name,V_String,100,PRIZM_Unique_License_202401_GEO
+24,CSDTYPE,Census Subdivision (2021) Type,V_String,100,PRIZM_Unique_License_202401_GEO
+25,CSDTYPEN,Census Subdivision (2021) Type Description,V_String,100,PRIZM_Unique_License_202401_GEO
+26,PRCD,Census Division (2021) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+27,CDNAME,Census Division (2021) Name,V_String,100,PRIZM_Unique_License_202401_GEO
+28,CDTYPE,Census Division (2021) Type,V_String,100,PRIZM_Unique_License_202401_GEO
+29,CDTYPEN,Census Division (2021) Type Description,V_String,100,PRIZM_Unique_License_202401_GEO
+30,PR,Province (2021) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+31,PRNAME,Province (2021) Name,V_String,100,PRIZM_Unique_License_202401_GEO
+32,PRABB,Province (2021) Abbreviation,V_String,100,PRIZM_Unique_License_202401_GEO
+33,CMACT,Census Tract (2021) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+34,CTNAME,Census Tract (2021) Name,V_String,100,PRIZM_Unique_License_202401_GEO
+35,CMACA,Census Metropolitan Area/Census Agglomeration (2021) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+36,CMANAME,Census Metropolitan Area/Census Agglomeration (2021) Name,V_String,100,PRIZM_Unique_License_202401_GEO
+37,CMATYPE,Census Metropolitan Area/Census Agglomeration (2021) Type,V_String,100,PRIZM_Unique_License_202401_GEO
+38,CMATYPEN,Census Metropolitan Area/Census Agglomeration (2021) Type Description,V_String,100,PRIZM_Unique_License_202401_GEO
+39,PRCMA,Census Metropolitan Area/Census Agglomeration (2021) (Provincial Split) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+40,PRCMANAME,Census Metropolitan Area/Census Agglomeration (2021) (Provincial Split) Name,V_String,100,PRIZM_Unique_License_202401_GEO
+41,REG,Region (2021) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+42,REGNAME,Region (2021) Name,V_String,100,PRIZM_Unique_License_202401_GEO
+43,CAN,Country (2021) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+44,CANNAME,Country (2021) Name,V_String,100,PRIZM_Unique_License_202401_GEO
+45,PRFED13,Federal Electoral District (2013) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+46,FED13NAME,Federal Electoral District (2013) Name,V_String,100,PRIZM_Unique_License_202401_GEO
+47,PRCDCCS,Census Consolidated Subdivision (2021) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+48,CCSNAME,Census Consolidated Subdivision (2021) Name,V_String,100,PRIZM_Unique_License_202401_GEO
+49,PRER,Economic Region (2021) SGC Code,V_String,16,PRIZM_Unique_License_202401_GEO
+50,ERNAME,Economic Region (2021) Name,V_String,100,PRIZM_Unique_License_202401_GEO

@@ -1,0 +1,54 @@
+User Story 3.1.3: Platform Status Monitoring
+
+As a Campaign Manager
+I want to see real-time platform connection status and health
+So that I can quickly identify and resolve integration issues
+
+## Acceptance Criteria
+
+1. **Status Indicators**
+   - Visual status badges (Connected, Disconnected, Error, Syncing)
+   - Color-coded indicators (green, red, yellow, blue)
+   - Last sync timestamp display
+   - Connection health percentage
+
+2. **Status Details**
+   - Expandable status cards
+   - Recent sync history (last 5 syncs)
+   - Error messages if applicable
+   - Next scheduled sync time
+
+3. **Quick Actions**
+   - Refresh connection button
+   - Force sync option
+   - View logs link
+   - Reconnect action for errors
+
+4. **Platform Metrics**
+   - Audiences synced count
+   - Match rate percentage
+   - Last successful sync
+   - Average sync duration
+
+5. **Notifications**
+   - Alert for connection failures
+   - Warning for sync delays
+   - Success confirmation for reconnections
+   - Email notification preferences
+
+## Technical Requirements
+
+- WebSocket for real-time updates
+- Status polling fallback
+- Error boundary for status component
+- Optimistic UI updates
+- Status caching strategy
+
+## Definition of Done
+
+- [ ] Status indicators update in real-time
+- [ ] All status states properly displayed
+- [ ] Quick actions trigger appropriate updates
+- [ ] Metrics accurately calculated
+- [ ] Responsive design for all screen sizes
+- [ ] Performance optimized for frequent updates

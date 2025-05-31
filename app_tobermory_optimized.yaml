@@ -1,0 +1,61 @@
+runtime: python311
+instance_class: F4  # More memory for embeddings
+
+automatic_scaling:
+  min_instances: 1  # Keep one instance warm
+  max_instances: 10
+  target_cpu_utilization: 0.65
+  min_idle_instances: 1  # Keep idle instance ready
+
+# Enable warmup requests
+inbound_services:
+- warmup
+
+env_variables:
+  FLASK_ENV: "production"
+  USE_EMBEDDINGS: "true"
+  GAE_ENV: "standard"
+  GOOGLE_CLOUD_PROJECT: "feisty-catcher-461000-g2"
+  GCS_BUCKET: "activation-manager-embeddings"
+  FRONTEND_URL: "https://tobermory.ai"
+  EMBEDDING_LOAD_STRATEGY: "lazy"  # or "parquet" or "warmup"
+
+handlers:
+# Warmup handler
+- url: /_ah/warmup
+  script: auto
+  login: admin
+
+# Health check
+- url: /health
+  script: auto
+  secure: always
+
+# API routes
+- url: /api/.*
+  script: auto
+  secure: always
+
+# Static files
+- url: /static
+  static_dir: audience-manager/build/static
+  secure: always
+  expiration: "1h"
+
+# Frontend assets
+- url: /favicon\.ico
+  static_files: audience-manager/build/favicon.ico
+  upload: audience-manager/build/favicon\.ico
+  secure: always
+
+# Other static files
+- url: /(manifest\.json|robots\.txt|logo192\.png|logo512\.png|headshot\.jpg)
+  static_files: audience-manager/build/\1
+  upload: audience-manager/build/(manifest\.json|robots\.txt|logo192\.png|logo512\.png|headshot\.jpg)
+  secure: always
+
+# Index.html for all routes
+- url: /.*
+  static_files: audience-manager/build/index.html
+  upload: audience-manager/build/index.html
+  secure: always

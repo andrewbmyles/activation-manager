@@ -1,0 +1,12 @@
+Flask==2.3.2
+flask-cors==4.0.0
+google-cloud-storage==2.10.0
+gunicorn==21.2.0
+numpy==1.26.4
+pandas==2.0.3
+pyarrow==13.0.0
+scikit-learn==1.3.0
+python-dotenv==1.0.0
+# Optional dependencies - using older stable OpenAI version to avoid proxies error
+faiss-cpu==1.7.4
+openai==0.27.8

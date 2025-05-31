@@ -1,0 +1,80 @@
+USER STORY 1.1.1: SETUP REACT APPLICATION WITH TYPESCRIPT
+=========================================================
+
+As a developer
+I want to set up a React application with TypeScript and necessary dependencies
+So that I can build a type-safe, scalable application
+
+Acceptance Criteria:
+- React 18+ application created with TypeScript template
+- Essential dependencies installed (React Router, React Query, Tailwind CSS)
+- Linting and formatting configured (ESLint, Prettier)
+- Git repository initialized with .gitignore
+- Basic folder structure established
+- Development server runs without errors
+
+Story Points: 3
+
+Priority: P0 - Critical
+
+Dependencies: None
+
+TECHNICAL TASKS:
+================
+
+1.1.1.1 - Initialize React TypeScript Application
+-------------------------------------------------
+- Run: npx create-react-app activation-manager --template typescript
+- Verify TypeScript configuration in tsconfig.json
+- Update React to latest stable version
+- Time Estimate: 1 hour
+
+1.1.1.2 - Install Core Dependencies
+------------------------------------
+- Install routing: npm install react-router-dom @types/react-router-dom
+- Install state management: npm install @tanstack/react-query
+- Install UI framework: npm install tailwindcss postcss autoprefixer
+- Install utilities: npm install clsx tailwind-merge
+- Install icons: npm install lucide-react
+- Install forms: npm install react-hook-form
+- Install charts: npm install recharts
+- Time Estimate: 1 hour
+
+1.1.1.3 - Configure Tailwind CSS
+---------------------------------
+- Run: npx tailwindcss init -p
+- Update tailwind.config.js with custom theme
+- Create CSS file with Tailwind directives
+- Configure PostCSS
+- Time Estimate: 2 hours
+
+1.1.1.4 - Setup Project Structure
+----------------------------------
+- Create folder structure:
+  /src
+    /components
+    /pages
+    /hooks
+    /utils
+    /types
+    /data
+    /api
+- Create index files for each directory
+- Setup path aliases in tsconfig.json
+- Time Estimate: 1 hour
+
+1.1.1.5 - Configure Development Tools
+-------------------------------------
+- Setup ESLint configuration
+- Configure Prettier
+- Add pre-commit hooks with Husky
+- Setup VS Code workspace settings
+- Create README.md with setup instructions
+- Time Estimate: 2 hours
+
+Definition of Done:
+- Code reviewed and approved
+- All dependencies installed successfully
+- Development server starts without warnings
+- TypeScript compilation successful
+- Documentation updated

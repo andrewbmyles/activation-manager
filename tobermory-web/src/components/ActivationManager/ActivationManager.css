@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enhanced NL Audience Builder specific styles */
+.enhanced-nl-audience-builder {
+  @apply h-full flex flex-col bg-white;
+}
+
+/* Override any conflicting styles */
+.activation-manager-app {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.activation-manager-app .bg-white {
+  background-color: white;
+}
+
+.activation-manager-app .rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.activation-manager-app .shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.activation-manager-app .border {
+  border-width: 1px;
+}
+
+.activation-manager-app .border-gray-200 {
+  border-color: #e5e7eb;
+}
+
+/* Ensure proper spacing */
+.activation-manager-app .p-6 {
+  padding: 1.5rem;
+}
+
+.activation-manager-app .space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+/* Button styles */
+.activation-manager-app button {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.activation-manager-app button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Input styles */
+.activation-manager-app input,
+.activation-manager-app select,
+.activation-manager-app textarea {
+  outline: none;
+  transition: all 0.2s;
+}
+
+.activation-manager-app input:focus,
+.activation-manager-app select:focus,
+.activation-manager-app textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}

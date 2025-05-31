@@ -1,0 +1,20 @@
+runtime: python311
+instance_class: F1
+
+handlers:
+- url: /static
+  static_dir: audience-manager/build/static
+  
+- url: /
+  static_files: audience-manager/build/index.html
+  upload: audience-manager/build/index.html
+
+- url: /api/.*
+  script: auto
+
+- url: /health
+  script: auto
+
+- url: /.*
+  static_files: audience-manager/build/index.html
+  upload: audience-manager/build/index.html

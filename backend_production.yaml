@@ -1,0 +1,21 @@
+runtime: python39
+service: activation-backend
+
+handlers:
+- url: /api/.*
+  script: auto
+  secure: always
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 20
+  target_cpu_utilization: 0.65
+
+instance_class: F2
+
+env_variables:
+  FLASK_ENV: production
+  EMBEDDINGS_ENABLED: "true"
+  STORAGE_BUCKET: "activation-manager-embeddings"
+
+entrypoint: gunicorn -b :$PORT main_backend:app

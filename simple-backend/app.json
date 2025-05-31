@@ -1,0 +1,11 @@
+{
+  "name": "Audience Manager Backend",
+  "description": "Simple backend for Audience Manager",
+  "repository": "https://github.com/yourusername/audience-manager",
+  "keywords": ["flask", "python", "api"],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}

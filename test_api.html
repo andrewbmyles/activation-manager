@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>Testing Variable Picker API</h1>
+    <button onclick="testAPI()">Test API</button>
+    <pre id="result"></pre>
+    
+    <script>
+    async function testAPI() {
+        const resultEl = document.getElementById('result');
+        try {
+            const response = await fetch('http://localhost:5000/api/variable-picker/start', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({query: 'millennials with high income', top_k: 10})
+            });
+            const data = await response.json();
+            resultEl.textContent = 'SUCCESS:\n' + JSON.stringify(data, null, 2);
+        } catch (error) {
+            resultEl.textContent = 'ERROR: ' + error;
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+.home-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-header {
+  margin-bottom: 40px;
+}
+
+.home-header h2 {
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--forest-dark);
+  margin-bottom: 8px;
+}
+
+.home-header p {
+  color: var(--slate-light);
+  font-size: 16px;
+}
+
+.projects-section h3 {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--slate);
+  margin-bottom: 24px;
+}
+
+/* Floating Action Button */
+.fab {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 8px 24px rgba(52, 168, 150, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  z-index: 100;
+}
+
+.fab:hover {
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 12px 32px rgba(52, 168, 150, 0.4);
+}
+
+.fab:active {
+  transform: scale(0.95);
+}
+
+.fab svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .home-header h2 {
+    font-size: 24px;
+  }
+
+  .fab {
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+}

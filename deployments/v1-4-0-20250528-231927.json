@@ -1,0 +1,11 @@
+{
+  "version": "1.4.0",
+  "timestamp": "2025-05-29T03:19:35Z",
+  "git_commit": "98574f8692eda1a9d837ab20ce105f9513ff779e",
+  "features": [
+    "Natural Language Multi-Variate Audience Builder",
+    "Responsive UI scaling",
+    "Unified data sources",
+    "Enhanced Variable Picker API integration"
+  ]
+}

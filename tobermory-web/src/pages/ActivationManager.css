@@ -1,0 +1,230 @@
+/* Full screen activation manager */
+.activation-manager-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f8fafb;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hide the sidebar when activation manager is active */
+body.activation-manager-active .sidebar {
+  display: none;
+}
+
+body.activation-manager-active .main-content {
+  margin-left: 0;
+}
+
+/* Minimal header */
+.activation-manager-header-minimal {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+}
+
+.back-button-minimal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--gray-200);
+  border-radius: 50%;
+  color: var(--slate);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button-minimal:hover {
+  background: var(--white);
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(52, 168, 150, 0.2);
+}
+
+.back-button-minimal svg {
+  transition: transform 0.3s ease;
+}
+
+.back-button-minimal:hover svg {
+  transform: translateX(-2px);
+}
+
+/* Full content area */
+.activation-manager-full-content {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.activation-manager-app {
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Ensure the Enhanced NL Audience Builder fills the container */
+.activation-manager-app > div {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+/* App header */
+.app-header {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+  color: white;
+  padding: 20px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* App content */
+.app-content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafb 100%);
+}
+
+/* Placeholder content - remove when integrating real app */
+.placeholder-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.placeholder-content h2 {
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--forest-dark);
+  margin-bottom: 16px;
+}
+
+.placeholder-content p {
+  font-size: 18px;
+  color: var(--slate);
+  margin-bottom: 40px;
+}
+
+.integration-info {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--gray-200);
+}
+
+.integration-info h3,
+.integration-info h4 {
+  color: var(--forest-dark);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.integration-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.integration-info li {
+  padding: 8px 0;
+  color: var(--slate);
+  font-size: 16px;
+}
+
+.demo-features {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.demo-features li {
+  color: var(--dark-green);
+  font-weight: 500;
+}
+
+/* Loading state */
+.activation-manager-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248, 250, 251, 0.95);
+  z-index: 1000;
+  gap: 20px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--gray-200);
+  border-top-color: var(--primary-green);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 16px 20px;
+  }
+
+  .app-header h1 {
+    font-size: 20px;
+  }
+
+  .app-content {
+    padding: 20px;
+  }
+
+  .activation-manager-header-minimal {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+/* Iframe integration styles */
+.activation-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+}
+
+/* Direct integration container */
+.activation-direct-integration {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: white;
+}

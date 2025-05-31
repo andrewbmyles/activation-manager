@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iframe Debug Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .debug-info {
+            background: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #333;
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iframe Loading Debug Test</h1>
+    
+    <div class="debug-info">
+        <h3>Test Results:</h3>
+        <div id="results"></div>
+    </div>
+    
+    <h3>Testing iframe:</h3>
+    <iframe 
+        id="test-iframe"
+        src="http://localhost:8080/activation-manager"
+        onload="handleLoad()"
+        onerror="handleError()"
+    ></iframe>
+    
+    <script>
+        const results = document.getElementById('results');
+        
+        // Log initial attempt
+        results.innerHTML += '<p>Attempting to load iframe from http://localhost:8080/activation-manager...</p>';
+        
+        // Check if we can fetch the URL directly
+        fetch('http://localhost:8080/activation-manager')
+            .then(response => {
+                results.innerHTML += `<p class="success">✓ Direct fetch successful: ${response.status}</p>`;
+                results.innerHTML += `<p>Headers:</p>`;
+                results.innerHTML += `<p>- X-Frame-Options: ${response.headers.get('X-Frame-Options')}</p>`;
+                results.innerHTML += `<p>- Content-Security-Policy: ${response.headers.get('Content-Security-Policy')}</p>`;
+                results.innerHTML += `<p>- Content-Type: ${response.headers.get('Content-Type')}</p>`;
+                return response.text();
+            })
+            .then(html => {
+                // Check for static asset references
+                const staticMatches = html.match(/\/static\/[^"']+/g);
+                if (staticMatches) {
+                    results.innerHTML += `<p class="error">⚠️ Found ${staticMatches.length} absolute static asset references that may fail:</p>`;
+                    staticMatches.slice(0, 5).forEach(match => {
+                        results.innerHTML += `<p>  - ${match}</p>`;
+                    });
+                }
+            })
+            .catch(error => {
+                results.innerHTML += `<p class="error">✗ Direct fetch failed: ${error}</p>`;
+            });
+        
+        function handleLoad() {
+            results.innerHTML += '<p class="success">✓ Iframe loaded successfully</p>';
+            
+            try {
+                const iframe = document.getElementById('test-iframe');
+                // Try to access iframe content (will fail if cross-origin)
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                results.innerHTML += '<p class="success">✓ Can access iframe content</p>';
+            } catch (e) {
+                results.innerHTML += '<p>⚠️ Cannot access iframe content (expected for cross-origin)</p>';
+            }
+        }
+        
+        function handleError() {
+            results.innerHTML += '<p class="error">✗ Iframe failed to load</p>';
+        }
+        
+        // Monitor console errors
+        window.addEventListener('error', (e) => {
+            if (e.message) {
+                results.innerHTML += `<p class="error">Console error: ${e.message}</p>`;
+            }
+        });
+        
+        // Check for CSP violations
+        document.addEventListener('securitypolicyviolation', (e) => {
+            results.innerHTML += `<p class="error">CSP Violation: ${e.violatedDirective} - ${e.blockedURI}</p>`;
+        });
+    </script>
+</body>
+</html>

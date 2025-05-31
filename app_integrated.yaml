@@ -1,0 +1,98 @@
+runtime: python311
+instance_class: F4  # More memory for embeddings
+
+automatic_scaling:
+  min_instances: 1  # Keep one instance warm
+  max_instances: 10
+  target_cpu_utilization: 0.65
+  min_idle_instances: 1  # Keep idle instance ready
+  max_concurrent_requests: 20  # Handle more concurrent requests
+
+# Enable warmup requests
+inbound_services:
+- warmup
+
+env_variables:
+  FLASK_ENV: "production"
+  USE_EMBEDDINGS: "true"
+  GAE_ENV: "standard"
+  GOOGLE_CLOUD_PROJECT: "feisty-catcher-461000-g2"
+  GCS_BUCKET: "activation-manager-embeddings"
+  FRONTEND_URL: "https://tobermory.ai"
+  EMBEDDING_LOAD_STRATEGY: "lazy"
+
+handlers:
+# Warmup handler
+- url: /_ah/warmup
+  script: auto
+  login: admin
+
+# Health check
+- url: /health
+  script: auto
+  secure: always
+
+# API routes
+- url: /api/.*
+  script: auto
+  secure: always
+
+# Static files for Tobermory Web
+- url: /static/css/(.*)
+  static_files: tobermory-web/build/static/css/\1
+  upload: tobermory-web/build/static/css/(.*)
+  secure: always
+  expiration: "30d"
+  http_headers:
+    X-Content-Type-Options: "nosniff"
+
+- url: /static/js/(.*)
+  static_files: tobermory-web/build/static/js/\1
+  upload: tobermory-web/build/static/js/(.*)
+  secure: always
+  expiration: "30d"
+  http_headers:
+    X-Content-Type-Options: "nosniff"
+
+- url: /static/media/(.*)
+  static_files: tobermory-web/build/static/media/\1
+  upload: tobermory-web/build/static/media/(.*)
+  secure: always
+  expiration: "30d"
+  http_headers:
+    X-Content-Type-Options: "nosniff"
+
+# Activation Manager static files (when served from /activation-manager)
+- url: /activation-manager/static/css/(.*)
+  static_files: audience-manager/build/static/css/\1
+  upload: audience-manager/build/static/css/(.*)
+  secure: always
+  expiration: "30d"
+
+- url: /activation-manager/static/js/(.*)
+  static_files: audience-manager/build/static/js/\1
+  upload: audience-manager/build/static/js/(.*)
+  secure: always
+  expiration: "30d"
+
+# Tobermory Web assets (serve these first for root domain)
+- url: /(favicon\.ico|manifest\.json|robots\.txt|logo192\.png|logo512\.png|tobermorylogo\.png)
+  static_files: tobermory-web/build/\1
+  upload: tobermory-web/build/(favicon\.ico|manifest\.json|robots\.txt|logo192\.png|logo512\.png|tobermorylogo\.png)
+  secure: always
+  expiration: "7d"
+
+# Activation Manager specific assets
+- url: /(headshot\.jpg|thetradedesk\.png)
+  static_files: audience-manager/build/\1
+  upload: audience-manager/build/(headshot\.jpg|thetradedesk\.png)
+  secure: always
+  expiration: "7d"
+
+# All other routes handled by Flask
+- url: /.*
+  script: auto
+  secure: always
+
+# Specify the main application file
+entrypoint: gunicorn -b :$PORT main_integrated:app --workers 8 --threads 2 --timeout 120

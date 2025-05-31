@@ -1,0 +1,85 @@
+runtime: python311
+instance_class: F4_1G  # High performance for demos
+
+automatic_scaling:
+  min_instances: 2  # Keep instances warm for instant response
+  max_instances: 5  # Allow scaling for multiple demo users
+  target_cpu_utilization: 0.5  # Scale aggressively for best performance
+  min_idle_instances: 2  # Always keep 2 instances ready
+  max_concurrent_requests: 80  # Conservative for stability
+
+# Enable warmup requests
+inbound_services:
+- warmup
+
+env_variables:
+  FLASK_ENV: "production"
+  USE_EMBEDDINGS: "true"
+  GAE_ENV: "standard"
+  GOOGLE_CLOUD_PROJECT: "feisty-catcher-461000-g2"
+  GCS_BUCKET: "activation-manager-embeddings"
+  FRONTEND_URL: "https://tobermory.ai"
+  EMBEDDING_LOAD_STRATEGY: "warmup"  # Pre-load embeddings for speed
+
+handlers:
+# Warmup handler
+- url: /_ah/warmup
+  script: auto
+  login: admin
+
+# Health check
+- url: /health
+  script: auto
+  secure: always
+
+# API routes
+- url: /api/.*
+  script: auto
+  secure: always
+
+# Static files with aggressive caching for demo performance
+- url: /static
+  static_dir: audience-manager/build/static
+  secure: always
+  expiration: "1d"
+  http_headers:
+    X-Content-Type-Options: "nosniff"
+    Cache-Control: "public, max-age=86400"
+
+# Frontend assets
+- url: /favicon\.ico
+  static_files: audience-manager/build/favicon.ico
+  upload: audience-manager/build/favicon\.ico
+  secure: always
+  expiration: "1d"
+
+# Other static files
+- url: /(manifest\.json|robots\.txt|logo192\.png|logo512\.png|headshot\.jpg|thetradedesk\.png)
+  static_files: audience-manager/build/\1
+  upload: audience-manager/build/(manifest\.json|robots\.txt|logo192\.png|logo512\.png|headshot\.jpg|thetradedesk\.png)
+  secure: always
+  expiration: "1d"
+
+# Index.html for all routes
+- url: /.*
+  static_files: audience-manager/build/index.html
+  upload: audience-manager/build/index.html
+  secure: always
+  http_headers:
+    Cache-Control: "no-cache, no-store, must-revalidate"
+
+# Aggressive health checks for demo stability
+readiness_check:
+  path: "/health"
+  check_interval_sec: 3  # Very frequent checks
+  timeout_sec: 10
+  failure_threshold: 2  # Quick recovery
+  success_threshold: 1
+  app_start_timeout_sec: 300
+
+liveness_check:
+  path: "/health"
+  check_interval_sec: 15  # Frequent monitoring
+  timeout_sec: 10
+  failure_threshold: 2  # Quick failure detection
+  success_threshold: 1

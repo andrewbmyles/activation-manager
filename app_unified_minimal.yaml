@@ -1,0 +1,33 @@
+runtime: python312
+service: default
+
+# Unified Search Migration Settings (0% rollout initially)
+env_variables:
+  USE_UNIFIED_SEARCH: "false"
+  UNIFIED_ROLLOUT_PERCENTAGE: "0"
+  DEMO_PASSWORD: "demo2024"
+  GCS_BUCKET: "activation-manager-embeddings"
+
+instance_class: F2
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 5
+  target_cpu_utilization: 0.75
+
+handlers:
+- url: /api/.*
+  script: auto
+  secure: always
+
+- url: /health
+  script: auto
+  secure: always
+
+- url: /_ah/.*
+  script: auto
+
+- url: /.*
+  static_files: tobermory-web/build/index.html
+  upload: tobermory-web/build/index.html
+  secure: always

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python generate_synthetic_data_enhanced.py:*)",
+      "Bash(mkdir:*)",
+      "Bash(python generate_synthetic_data_fixed.py:*)"
+    ],
+    "deny": []
+  }
+}

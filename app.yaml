@@ -1,0 +1,71 @@
+runtime: python311
+
+# Basic scaling configuration
+automatic_scaling:
+  min_instances: 1
+  max_instances: 10
+  target_cpu_utilization: 0.65
+  target_throughput_utilization: 0.65
+
+# Environment variables
+env_variables:
+  FLASK_ENV: "production"
+  USE_EMBEDDINGS: "true"
+  GAE_ENV: "standard"
+  GOOGLE_CLOUD_PROJECT: "feisty-catcher-461000-g2"
+  GCS_BUCKET: "activation-manager-data"
+
+# Handlers
+handlers:
+# Serve static files from React build
+- url: /static
+  static_dir: audience-manager/build/static
+  secure: always
+  expiration: "1h"
+
+# Serve other frontend assets
+- url: /(.*\.(json|ico|js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))$
+  static_files: audience-manager/build/\1
+  upload: audience-manager/build/.*\.(json|ico|js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$
+  secure: always
+
+# Serve index.html for all routes (React Router)
+- url: /
+  static_files: audience-manager/build/index.html
+  upload: audience-manager/build/index.html
+  secure: always
+
+# API routes go to backend
+- url: /api/.*
+  script: auto
+  secure: always
+
+# Health check
+- url: /health
+  script: auto
+  secure: always
+
+# Catch all - serve index.html for client-side routing
+- url: /.*
+  static_files: audience-manager/build/index.html
+  upload: audience-manager/build/index.html
+  secure: always
+
+# Instance class (for better performance with embeddings)
+instance_class: F2
+
+# Health check
+readiness_check:
+  path: "/health"
+  check_interval_sec: 5
+  timeout_sec: 4
+  failure_threshold: 2
+  success_threshold: 2
+  app_start_timeout_sec: 300
+
+liveness_check:
+  path: "/health"
+  check_interval_sec: 30
+  timeout_sec: 4
+  failure_threshold: 3
+  success_threshold: 2

@@ -1,0 +1,21 @@
+// Key fixes for NL workflow:
+
+1. Fix state management consistency:
+   - Use isLoadingVariables consistently for loading states
+   - Properly clean up timers to prevent memory leaks
+   - Ensure isTyping state is reset properly
+
+2. Fix API error handling:
+   - Add better error handling for session initialization
+   - Ensure fallback works when enhanced API fails
+   - Add timeout handling for API calls
+
+3. Fix input field issues:
+   - Remove conflicting disabled conditions
+   - Ensure input remains active during searches
+   - Fix button state management
+
+4. Add defensive programming:
+   - Check for null/undefined before using variables
+   - Add try-catch blocks around state updates
+   - Ensure component unmount cleanup

@@ -1,0 +1,77 @@
+runtime: python311
+instance_class: F1  # Smallest instance class - very cost effective
+
+automatic_scaling:
+  min_instances: 0  # Scale to zero when not in use
+  max_instances: 2  # Maximum 2 instances
+  target_cpu_utilization: 0.8  # Higher threshold
+  min_idle_instances: 0  # No idle instances
+  max_concurrent_requests: 50  # Lower but sufficient for testing
+
+# Enable warmup for faster cold starts
+inbound_services:
+- warmup
+
+env_variables:
+  FLASK_ENV: "production"
+  USE_EMBEDDINGS: "false"  # Disable embeddings for minimal resource usage
+  GAE_ENV: "standard"
+  GOOGLE_CLOUD_PROJECT: "feisty-catcher-461000-g2"
+  GCS_BUCKET: "activation-manager-embeddings"
+  FRONTEND_URL: "https://tobermory.ai"
+
+handlers:
+# Warmup handler
+- url: /_ah/warmup
+  script: auto
+  login: admin
+
+# Health check
+- url: /health
+  script: auto
+  secure: always
+
+# API routes
+- url: /api/.*
+  script: auto
+  secure: always
+
+# Static files
+- url: /static
+  static_dir: audience-manager/build/static
+  secure: always
+  expiration: "1h"
+
+# Frontend assets
+- url: /favicon\.ico
+  static_files: audience-manager/build/favicon.ico
+  upload: audience-manager/build/favicon\.ico
+  secure: always
+
+# Other static files
+- url: /(manifest\.json|robots\.txt|logo192\.png|logo512\.png|headshot\.jpg|thetradedesk\.png)
+  static_files: audience-manager/build/\1
+  upload: audience-manager/build/(manifest\.json|robots\.txt|logo192\.png|logo512\.png|headshot\.jpg|thetradedesk\.png)
+  secure: always
+
+# Index.html for all routes
+- url: /.*
+  static_files: audience-manager/build/index.html
+  upload: audience-manager/build/index.html
+  secure: always
+
+# Very relaxed health checks for maximum cost savings
+readiness_check:
+  path: "/health"
+  check_interval_sec: 15
+  timeout_sec: 20
+  failure_threshold: 4
+  success_threshold: 2
+  app_start_timeout_sec: 120
+
+liveness_check:
+  path: "/health"
+  check_interval_sec: 120  # Very infrequent
+  timeout_sec: 20
+  failure_threshold: 5
+  success_threshold: 2

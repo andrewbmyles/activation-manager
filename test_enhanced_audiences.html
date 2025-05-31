@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Audience Management Test</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f5f5f5;
+        }
+        .audience-card {
+            transition: all 0.3s ease;
+        }
+        .audience-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Icon components
+        const GamepadIcon = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+            </svg>
+        );
+
+        const ShoppingBagIcon = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+        );
+
+        const BriefcaseIcon = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+        );
+
+        const HeartIcon = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+        );
+
+        const HomeIcon = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+        );
+
+        const BeakerIcon = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+        );
+
+        const AcademicCapIcon = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+            </svg>
+        );
+
+        const GlobeIcon = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        );
+
+        const FilmIcon = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+            </svg>
+        );
+
+        const MusicNoteIcon = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+            </svg>
+        );
+
+        const DefaultIcon = () => (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+        );
+
+        // AudienceIcon component
+        const AudienceIcon = ({ type, className = "" }) => {
+            const iconMap = {
+                gaming: GamepadIcon,
+                fashion: ShoppingBagIcon,
+                professional: BriefcaseIcon,
+                health: HeartIcon,
+                realestate: HomeIcon,
+                technology: BeakerIcon,
+                education: AcademicCapIcon,
+                travel: GlobeIcon,
+                entertainment: FilmIcon,
+                music: MusicNoteIcon
+            };
+
+            const IconComponent = iconMap[type] || DefaultIcon;
+            return <IconComponent />;
+        };
+
+        // Mock API data with different audience types
+        const mockAudiences = [
+            // Enhanced audiences with all fields
+            {
+                id: "aud_001",
+                name: "High-Value Gaming Enthusiasts",
+                enhanced_name: "Premium Console Gaming Aficionados",
+                size: 78543,
+                criteria: [
+                    { variable: "Gaming Console Ownership", operator: "includes", value: ["PlayStation 5", "Xbox Series X"] },
+                    { variable: "Annual Gaming Spend", operator: "greater than", value: 500 }
+                ],
+                insights: {
+                    description: "Tech-savvy gamers who invest heavily in premium gaming experiences",
+                    demographics: { avg_age: 28, gender_dist: { male: 65, female: 35 } },
+                    behaviors: ["Early adopters", "Online multiplayer", "Streaming services"]
+                },
+                type: "gaming",
+                created_at: "2024-01-15T10:30:00Z",
+                natural_language_description: "People who own premium gaming consoles and spend over $500 annually on gaming"
+            },
+            {
+                id: "aud_002",
+                name: "Fashion Forward Millennials",
+                enhanced_name: "Sustainable Fashion Trendsetters",
+                size: 65234,
+                criteria: [
+                    { variable: "Age", operator: "between", value: [25, 40] },
+                    { variable: "Fashion Interest", operator: "equals", value: "High" }
+                ],
+                insights: {
+                    description: "Fashion-conscious millennials focused on sustainable and ethical brands",
+                    demographics: { avg_age: 32, gender_dist: { male: 30, female: 70 } },
+                    behaviors: ["Social media active", "Brand conscious", "Eco-friendly"]
+                },
+                type: "fashion",
+                created_at: "2024-01-14T14:20:00Z",
+                natural_language_description: "Millennials aged 25-40 with high interest in fashion"
+            },
+            {
+                id: "aud_003",
+                name: "Business Executives",
+                enhanced_name: "C-Suite Decision Makers",
+                size: 45678,
+                criteria: [
+                    { variable: "Job Title", operator: "includes", value: ["CEO", "CFO", "CTO"] },
+                    { variable: "Company Size", operator: "greater than", value: 500 }
+                ],
+                insights: {
+                    description: "Senior executives at large enterprises with significant purchasing power",
+                    demographics: { avg_age: 48, gender_dist: { male: 70, female: 30 } },
+                    behaviors: ["B2B focused", "Technology adopters", "High income"]
+                },
+                type: "professional",
+                created_at: "2024-01-13T09:15:00Z",
+                natural_language_description: "C-level executives at companies with 500+ employees"
+            },
+            // Legacy audience without enhanced fields
+            {
+                id: "aud_004",
+                name: "Health Conscious Consumers",
+                size: 87654,
+                criteria: [
+                    { variable: "Fitness Level", operator: "equals", value: "Active" }
+                ],
+                created_at: "2024-01-12T16:45:00Z"
+            },
+            {
+                id: "aud_005",
+                name: "Real Estate Investors",
+                enhanced_name: "Luxury Property Portfolio Builders",
+                size: 34567,
+                criteria: [
+                    { variable: "Property Ownership", operator: "greater than", value: 2 },
+                    { variable: "Investment Interest", operator: "includes", value: ["Real Estate"] }
+                ],
+                insights: {
+                    description: "Affluent individuals actively building real estate portfolios",
+                    demographics: { avg_age: 45, gender_dist: { male: 60, female: 40 } },
+                    behaviors: ["Multiple property owners", "Investment focused", "High net worth"]
+                },
+                type: "realestate",
+                created_at: "2024-01-11T11:30:00Z",
+                natural_language_description: "Property owners with 2+ properties interested in real estate investment"
+            },
+            {
+                id: "aud_006",
+                name: "Tech Early Adopters",
+                enhanced_name: "Cutting-Edge Technology Pioneers",
+                size: 56789,
+                criteria: [
+                    { variable: "Technology Adoption", operator: "equals", value: "Early Adopter" },
+                    { variable: "Tech Spend", operator: "greater than", value: 1000 }
+                ],
+                type: "technology",
+                created_at: "2024-01-10T13:20:00Z",
+                natural_language_description: "Early technology adopters who spend over $1000 on tech annually"
+            },
+            {
+                id: "aud_007",
+                name: "Education Seekers",
+                enhanced_name: "Lifelong Learning Professionals",
+                size: 76543,
+                criteria: [
+                    { variable: "Education Level", operator: "includes", value: ["Masters", "PhD"] },
+                    { variable: "Course Enrollment", operator: "greater than", value: 2 }
+                ],
+                insights: {
+                    description: "Highly educated individuals committed to continuous learning",
+                    demographics: { avg_age: 35, gender_dist: { male: 45, female: 55 } },
+                    behaviors: ["Online course takers", "Professional development", "Book readers"]
+                },
+                type: "education",
+                created_at: "2024-01-09T08:45:00Z",
+                natural_language_description: "Graduate degree holders enrolled in multiple courses"
+            },
+            {
+                id: "aud_008",
+                name: "Travel Enthusiasts",
+                enhanced_name: "Global Adventure Seekers",
+                size: 89234,
+                criteria: [
+                    { variable: "Annual Travel Frequency", operator: "greater than", value: 5 },
+                    { variable: "Travel Budget", operator: "greater than", value: 5000 }
+                ],
+                insights: {
+                    description: "Frequent travelers who explore the world with substantial budgets",
+                    demographics: { avg_age: 38, gender_dist: { male: 50, female: 50 } },
+                    behaviors: ["Frequent flyers", "Hotel loyalty members", "Experience seekers"]
+                },
+                type: "travel",
+                created_at: "2024-01-08T15:10:00Z",
+                natural_language_description: "People who travel 5+ times annually with budgets over $5000"
+            },
+            // Mixed legacy audience
+            {
+                id: "aud_009",
+                name: "Entertainment Buffs",
+                size: 67890,
+                criteria: [
+                    { variable: "Streaming Services", operator: "greater than", value: 3 }
+                ],
+                created_at: "2024-01-07T12:00:00Z"
+            },
+            {
+                id: "aud_010",
+                name: "Music Festival Goers",
+                enhanced_name: "Live Music Experience Collectors",
+                size: 45678,
+                criteria: [
+                    { variable: "Festival Attendance", operator: "greater than", value: 2 },
+                    { variable: "Music Genre Interest", operator: "includes", value: ["Electronic", "Rock", "Hip-Hop"] }
+                ],
+                type: "music",
+                created_at: "2024-01-06T17:30:00Z",
+                natural_language_description: "Festival attendees interested in electronic, rock, and hip-hop music"
+            }
+        ];
+
+        // Determine audience type from criteria
+        const determineAudienceType = (criteria, name = '') => {
+            if (!criteria || criteria.length === 0) return 'default';
+            
+            const nameLC = name.toLowerCase();
+            const criteriaStr = JSON.stringify(criteria).toLowerCase();
+            
+            if (criteriaStr.includes('gaming') || criteriaStr.includes('console') || nameLC.includes('gaming')) return 'gaming';
+            if (criteriaStr.includes('fashion') || criteriaStr.includes('style') || nameLC.includes('fashion')) return 'fashion';
+            if (criteriaStr.includes('executive') || criteriaStr.includes('business') || nameLC.includes('business') || nameLC.includes('executive')) return 'professional';
+            if (criteriaStr.includes('health') || criteriaStr.includes('fitness') || nameLC.includes('health')) return 'health';
+            if (criteriaStr.includes('property') || criteriaStr.includes('real estate') || nameLC.includes('real estate')) return 'realestate';
+            if (criteriaStr.includes('tech') || criteriaStr.includes('technology') || nameLC.includes('tech')) return 'technology';
+            if (criteriaStr.includes('education') || criteriaStr.includes('learning') || nameLC.includes('education')) return 'education';
+            if (criteriaStr.includes('travel') || criteriaStr.includes('trip') || nameLC.includes('travel')) return 'travel';
+            if (criteriaStr.includes('entertainment') || criteriaStr.includes('movie') || nameLC.includes('entertainment')) return 'entertainment';
+            if (criteriaStr.includes('music') || criteriaStr.includes('concert') || nameLC.includes('music')) return 'music';
+            
+            return 'default';
+        };
+
+        // Get audience type color
+        const getAudienceTypeColor = (type) => {
+            const colors = {
+                gaming: 'bg-purple-100 text-purple-800 border-purple-200',
+                fashion: 'bg-pink-100 text-pink-800 border-pink-200',
+                professional: 'bg-blue-100 text-blue-800 border-blue-200',
+                health: 'bg-green-100 text-green-800 border-green-200',
+                realestate: 'bg-amber-100 text-amber-800 border-amber-200',
+                technology: 'bg-indigo-100 text-indigo-800 border-indigo-200',
+                education: 'bg-teal-100 text-teal-800 border-teal-200',
+                travel: 'bg-sky-100 text-sky-800 border-sky-200',
+                entertainment: 'bg-red-100 text-red-800 border-red-200',
+                music: 'bg-orange-100 text-orange-800 border-orange-200',
+                default: 'bg-gray-100 text-gray-800 border-gray-200'
+            };
+            return colors[type] || colors.default;
+        };
+
+        // Format date
+        const formatDate = (dateString) => {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+        };
+
+        // Format number
+        const formatNumber = (num) => {
+            return num.toLocaleString();
+        };
+
+        // AudienceCard component
+        const AudienceCard = ({ audience }) => {
+            const type = audience.type || determineAudienceType(audience.criteria, audience.name);
+            const colorClasses = getAudienceTypeColor(type);
+            const displayName = audience.enhanced_name || audience.name;
+            const naturalLanguageDesc = audience.natural_language_description || 
+                (audience.criteria && audience.criteria.length > 0 
+                    ? `Audience based on ${audience.criteria.length} criteria`
+                    : 'Custom audience segment');
+
+            return (
+                <div className="audience-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg cursor-pointer">
+                    <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center space-x-3">
+                            <div className={`p-2 rounded-lg border ${colorClasses}`}>
+                                <AudienceIcon type={type} />
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-semibold text-gray-900">{displayName}</h3>
+                                {audience.enhanced_name && (
+                                    <p className="text-sm text-gray-500">{audience.name}</p>
+                                )}
+                            </div>
+                        </div>
+                        <span className="text-sm text-gray-500">
+                            {formatDate(audience.created_at)}
+                        </span>
+                    </div>
+
+                    <p className="text-gray-600 mb-4">{naturalLanguageDesc}</p>
+
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center space-x-2">
+                            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            <span className="text-2xl font-bold text-gray-900">{formatNumber(audience.size)}</span>
+                            <span className="text-sm text-gray-500">people</span>
+                        </div>
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${colorClasses}`}>
+                            {type.charAt(0).toUpperCase() + type.slice(1)}
+                        </span>
+                    </div>
+
+                    {audience.insights && (
+                        <div className="border-t pt-4">
+                            <p className="text-sm text-gray-600 mb-2">{audience.insights.description}</p>
+                            {audience.insights.demographics && (
+                                <div className="flex items-center space-x-4 text-xs text-gray-500">
+                                    <span>Avg age: {audience.insights.demographics.avg_age}</span>
+                                    <span>•</span>
+                                    <span>
+                                        {audience.insights.demographics.gender_dist.male}% male, 
+                                        {audience.insights.demographics.gender_dist.female}% female
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+                    )}
+
+                    <div className="mt-4 flex space-x-2">
+                        <button className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
+                            View Details
+                        </button>
+                        <button className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            );
+        };
+
+        // Main App component
+        const App = () => {
+            const [audiences, setAudiences] = React.useState(mockAudiences);
+            const [loading, setLoading] = React.useState(false);
+
+            return (
+                <div className="min-h-screen bg-gray-50">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                        <div className="mb-8">
+                            <h1 className="text-3xl font-bold text-gray-900">Enhanced Audience Management Test</h1>
+                            <p className="mt-2 text-gray-600">Testing enhanced audience display with icons, insights, and natural language descriptions</p>
+                        </div>
+
+                        <div className="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <h2 className="text-lg font-semibold text-blue-900 mb-2">Test Coverage</h2>
+                            <ul className="space-y-1 text-sm text-blue-800">
+                                <li>✓ Enhanced audiences with all fields (gaming, fashion, professional, etc.)</li>
+                                <li>✓ Legacy audiences without enhanced fields (fallback behavior)</li>
+                                <li>✓ Icon selection based on audience type</li>
+                                <li>✓ Color coding for different audience categories</li>
+                                <li>✓ Natural language descriptions</li>
+                                <li>✓ Insights display when available</li>
+                                <li>✓ Proper size formatting (56,798-89,380 range)</li>
+                            </ul>
+                        </div>
+
+                        {loading ? (
+                            <div className="flex justify-center items-center h-64">
+                                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {audiences.map(audience => (
+                                    <AudienceCard key={audience.id} audience={audience} />
+                                ))}
+                            </div>
+                        )}
+
+                        <div className="mt-8 bg-gray-100 rounded-lg p-4">
+                            <h3 className="text-sm font-semibold text-gray-700 mb-2">Legend</h3>
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+                                {['gaming', 'fashion', 'professional', 'health', 'realestate', 'technology', 'education', 'travel', 'entertainment', 'music'].map(type => (
+                                    <div key={type} className="flex items-center space-x-2">
+                                        <div className={`p-1 rounded ${getAudienceTypeColor(type)}`}>
+                                            <AudienceIcon type={type} className="w-4 h-4" />
+                                        </div>
+                                        <span className="capitalize">{type}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

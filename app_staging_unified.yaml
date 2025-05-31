@@ -1,0 +1,64 @@
+runtime: python312
+service: default
+
+# Unified Search Migration Settings (0% rollout)
+env_variables:
+  USE_UNIFIED_SEARCH: "false"
+  UNIFIED_ROLLOUT_PERCENTAGE: "0"
+  DEMO_PASSWORD: "demo2024"
+  GCS_BUCKET: "activation-manager-embeddings"
+
+instance_class: F2
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 5
+  min_idle_instances: 1
+  max_idle_instances: 1
+  target_cpu_utilization: 0.75
+  max_concurrent_requests: 20
+
+handlers:
+- url: /static
+  static_dir: audience-manager/build/static
+  secure: always
+
+- url: /activation-manager/static
+  static_dir: audience-manager/build/static
+  secure: always
+
+- url: /activation-manager
+  static_files: audience-manager/build/index.html
+  upload: audience-manager/build/index.html
+  secure: always
+
+- url: /activation-manager/.*
+  static_files: audience-manager/build/index.html
+  upload: audience-manager/build/index.html
+  secure: always
+
+- url: /favicon.ico
+  static_files: audience-manager/build/favicon.ico
+  upload: audience-manager/build/favicon.ico
+  secure: always
+
+- url: /manifest.json
+  static_files: audience-manager/build/manifest.json
+  upload: audience-manager/build/manifest.json
+  secure: always
+
+- url: /api/.*
+  script: auto
+  secure: always
+
+- url: /health
+  script: auto
+  secure: always
+
+- url: /_ah/.*
+  script: auto
+
+- url: /.*
+  static_files: tobermory-web/build/index.html
+  upload: tobermory-web/build/index.html
+  secure: always

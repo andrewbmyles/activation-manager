@@ -1,0 +1,112 @@
+USER STORY 2.1.2: CREATE DYNAMIC OPERATOR AND VALUE INPUTS
+==========================================================
+
+As a campaign manager
+I want operators and value inputs that adapt based on the selected variable type
+So that I can input criteria values in the most appropriate format
+
+Acceptance Criteria:
+- Operators change based on variable data type
+- Value inputs adapt to operator selection
+- Support for single values, multiple values, and ranges
+- Predefined value lists shown when available
+- Date pickers for date variables
+- Boolean selectors for true/false
+- Multi-select for array operations
+- Validation based on data type
+
+Story Points: 5
+
+Priority: P0 - Critical
+
+Dependencies:
+- 2.1.1 - Variable selector component complete
+- Form validation strategy defined
+
+TECHNICAL TASKS:
+================
+
+2.1.2.1 - Create Operator Selector Component
+--------------------------------------------
+- Build OperatorSelector component
+- Map operators to human-readable labels:
+  - equals → "Equals"
+  - greater_than → "Greater Than"
+  - between → "Between"
+  - contains → "Contains"
+  - etc.
+- Filter operators based on variable data type
+- Style as consistent dropdown
+- Time Estimate: 2 hours
+
+2.1.2.2 - Build Dynamic Value Input Component
+---------------------------------------------
+- Create ValueInput component with type detection
+- Implement input type switching based on:
+  - Variable data type
+  - Selected operator
+  - Available examples
+- Handle null/empty states
+- Add proper TypeScript types
+- Time Estimate: 4 hours
+
+2.1.2.3 - Implement Number Input Variations
+-------------------------------------------
+- Single number input for equals, greater_than, less_than
+- Dual inputs for "between" operator
+- Number validation and formatting
+- Min/max constraints if defined
+- Decimal place handling
+- Time Estimate: 3 hours
+
+2.1.2.4 - Create String Input Variations
+-----------------------------------------
+- Text input for basic operations
+- Dropdown when examples available
+- Multi-select for "in" operator
+- Comma-separated input parsing
+- "Other" option for custom values
+- Time Estimate: 3 hours
+
+2.1.2.5 - Build Date Selection Inputs
+--------------------------------------
+- Native date picker integration
+- Date range picker for "between"
+- Relative date options (future enhancement)
+- Date format consistency
+- Calendar icon indicator
+- Time Estimate: 3 hours
+
+2.1.2.6 - Implement Boolean Selector
+-------------------------------------
+- Radio buttons or dropdown for true/false
+- Clear labeling
+- Handle null state
+- Consistent styling
+- Time Estimate: 1 hour
+
+2.1.2.7 - Create Array Value Handlers
+--------------------------------------
+- Checkbox list when examples provided
+- Tag input for custom values
+- Add/remove functionality
+- Visual feedback for selections
+- Maximum selection limits
+- Time Estimate: 4 hours
+
+2.1.2.8 - Add Input Validation
+-------------------------------
+- Real-time validation feedback
+- Type-specific validation rules
+- Required field handling
+- Error message display
+- Prevent invalid submissions
+- Time Estimate: 3 hours
+
+Definition of Done:
+- All data types have appropriate inputs
+- Operators correctly filtered by type
+- Validation prevents invalid data
+- Consistent styling across all variations
+- Accessibility standards met
+- Unit tests for type detection logic

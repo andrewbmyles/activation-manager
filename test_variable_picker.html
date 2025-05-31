@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Variable Picker Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        button { padding: 10px 20px; margin: 10px 0; cursor: pointer; }
+        #result { margin-top: 20px; padding: 10px; border: 1px solid #ccc; min-height: 100px; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Variable Picker API Test</h1>
+    
+    <div>
+        <label for="query">Search Query:</label><br>
+        <input type="text" id="query" value="young millennials who shop online" style="width: 300px; padding: 5px;">
+    </div>
+    
+    <button onclick="testPort8080()">Test Port 8080 (Expected)</button>
+    <button onclick="testPort5000()">Test Port 5000</button>
+    <button onclick="testPort3000()">Test Port 3000</button>
+    
+    <div id="result"></div>
+    
+    <script>
+        function showResult(message, isError = false) {
+            const result = document.getElementById('result');
+            result.innerHTML = `<div class="${isError ? 'error' : 'success'}">${message}</div>`;
+        }
+        
+        async function testEndpoint(port) {
+            const query = document.getElementById('query').value;
+            const url = `http://localhost:${port}/api/variable-picker/start`;
+            
+            showResult(`Testing ${url}...`);
+            
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query, top_k: 30 })
+                });
+                
+                if (!response.ok) {
+                    const text = await response.text();
+                    showResult(`Port ${port}: HTTP ${response.status} - ${text || 'No response body'}`, true);
+                    console.error('Response error:', response.status, text);
+                } else {
+                    const data = await response.json();
+                    showResult(`Port ${port}: Success! Found ${data.suggested_count} variables.
+                    <br>Session ID: ${data.session_id}
+                    <br>Status: ${data.status}
+                    <br><pre>${JSON.stringify(data.variables.slice(0, 3), null, 2)}</pre>`);
+                    console.log('Success:', data);
+                }
+            } catch (error) {
+                showResult(`Port ${port}: ${error.message}`, true);
+                console.error('Fetch error:', error);
+            }
+        }
+        
+        function testPort8080() { testEndpoint(8080); }
+        function testPort5000() { testEndpoint(5000); }
+        function testPort3000() { testEndpoint(3000); }
+    </script>
+</body>
+</html>

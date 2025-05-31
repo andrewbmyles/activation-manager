@@ -1,0 +1,275 @@
+﻿Order,Variable,Description,Category,Root Formula,Type,Size
+0,CODE,,Geography,[SVBAS15HP],V_String,16
+0,GEO,,Geography,[SVBAS15HP],V_String,16
+1,SVBAS15HP,Household Population 15+,Basics,[SVBAS15HP],Double,8
+2,SV00001,Acceptance of Violence,Trends,[SVBAS15HP],Double,8
+3,SV00002,Active Government,Trends,[SVBAS15HP],Double,8
+4,SV00003,Adaptability to Complexity,Trends,[SVBAS15HP],Double,8
+5,SV00004,Advertising as Stimulus,Trends,[SVBAS15HP],Double,8
+6,SV00005,Anomie-Aimlessness,Trends,[SVBAS15HP],Double,8
+7,SV00301,Apocalyptic Anxiety,Trends,[SVBAS15HP],Double,8
+8,SV00006,Attraction For Crowds,Trends,[SVBAS15HP],Double,8
+9,SV00007,Attraction to Nature,Trends,[SVBAS15HP],Double,8
+10,SV00302,Authoritarian Impulse,Trends,[SVBAS15HP],Double,8
+11,SV00008,Aversion to Complexity,Trends,[SVBAS15HP],Double,8
+12,SV00009,Brand Apathy,Trends,[SVBAS15HP],Double,8
+13,SV00010,Brand Genuineness,Trends,[SVBAS15HP],Double,8
+14,SV00011,Buying on Impulse,Trends,[SVBAS15HP],Double,8
+15,SV00012,Community Involvement,Trends,[SVBAS15HP],Double,8
+16,SV00013,Concern for Appearance,Trends,[SVBAS15HP],Double,8
+17,SV00014,Confidence in Advertising,Trends,[SVBAS15HP],Double,8
+18,SV00015,Confidence in Big Business,Trends,[SVBAS15HP],Double,8
+19,SV00016,Confidence in Small Business,Trends,[SVBAS15HP],Double,8
+20,SV00017,Consumption Evangelism,Trends,[SVBAS15HP],Double,8
+21,SV00018,Consumptivity,Trends,[SVBAS15HP],Double,8
+22,SV00019,Cultural Assimilation,Trends,[SVBAS15HP],Double,8
+23,SV00020,Culture Sampling,Trends,[SVBAS15HP],Double,8
+24,SV00021,Discriminating Consumerism,Trends,[SVBAS15HP],Double,8
+25,SV00022,Duty,Trends,[SVBAS15HP],Double,8
+26,SV00023,Ecological Concern,Trends,[SVBAS15HP],Double,8
+27,SV00024,Ecological Fatalism,Trends,[SVBAS15HP],Double,8
+28,SV00025,Ecological Lifestyle,Trends,[SVBAS15HP],Double,8
+29,SV00026,Effort Toward Health,Trends,[SVBAS15HP],Double,8
+30,SV00027,Emotional Control,Trends,[SVBAS15HP],Double,8
+31,SV00028,Enthusiasm for Technology,Trends,[SVBAS15HP],Double,8
+32,SV00029,Equal Relationship with Youth,Trends,[SVBAS15HP],Double,8
+33,SV00030,Ethical Consumerism,Trends,[SVBAS15HP],Double,8
+34,SV00031,Fatalism,Trends,[SVBAS15HP],Double,8
+35,SV00032,Fear of Violence,Trends,[SVBAS15HP],Double,8
+36,SV00033,Financial Concern Regarding the Future,Trends,[SVBAS15HP],Double,8
+37,SV00034,Financial Security,Trends,[SVBAS15HP],Double,8
+38,SV00035,Flexible Families,Trends,[SVBAS15HP],Double,8
+39,SV00036,Fulfilment Through Work,Trends,[SVBAS15HP],Double,8
+40,SV00037,Global Consciousness,Trends,[SVBAS15HP],Double,8
+41,SV00038,Importance of Aesthetics,Trends,[SVBAS15HP],Double,8
+42,SV00039,Importance of Brand,Trends,[SVBAS15HP],Double,8
+43,SV00040,Importance of Price,Trends,[SVBAS15HP],Double,8
+44,SV00041,Importance of Spontaneity,Trends,[SVBAS15HP],Double,8
+45,SV00042,Interest in the Unexplained,Trends,[SVBAS15HP],Double,8
+46,SV00043,Introspection & Empathy,Trends,[SVBAS15HP],Double,8
+47,SV00044,Intuition & Impulse,Trends,[SVBAS15HP],Double,8
+48,SV00045,Joy of Consumption,Trends,[SVBAS15HP],Double,8
+49,SV00046,Just Deserts,Trends,[SVBAS15HP],Double,8
+50,SV00047,Legacy,Trends,[SVBAS15HP],Double,8
+51,SV00049,Multiculturalism,Trends,[SVBAS15HP],Double,8
+52,SV00050,National Pride,Trends,[SVBAS15HP],Double,8
+53,SV00051,Need for Escape,Trends,[SVBAS15HP],Double,8
+54,SV00052,Need for Status Recognition,Trends,[SVBAS15HP],Double,8
+55,SV00053,North American Dream,Trends,[SVBAS15HP],Double,8
+56,SV00054,Obedience to Authority,Trends,[SVBAS15HP],Double,8
+57,SV00055,Ostentatious Consumption,Trends,[SVBAS15HP],Double,8
+58,SV00056,Parochialism,Trends,[SVBAS15HP],Double,8
+59,SV00057,Patriarchy,Trends,[SVBAS15HP],Double,8
+60,SV00058,Penchant for Risk,Trends,[SVBAS15HP],Double,8
+61,SV00059,Personal Challenge,Trends,[SVBAS15HP],Double,8
+62,SV00060,Personal Control,Trends,[SVBAS15HP],Double,8
+63,SV00061,Personal Creativity,Trends,[SVBAS15HP],Double,8
+64,SV00062,Personal Expression,Trends,[SVBAS15HP],Double,8
+65,SV00063,Personal Optimism,Trends,[SVBAS15HP],Double,8
+66,SV00304,Post-Materialist Mindsets,Trends,[SVBAS15HP],Double,8
+67,SV00273,Primacy of Environmental Protection,Trends,[SVBAS15HP],Double,8
+68,SV00064,Primacy of the Family,Trends,[SVBAS15HP],Double,8
+69,SV00065,Propriety,Trends,[SVBAS15HP],Double,8
+70,SV00066,Pursuit of Intensity,Trends,[SVBAS15HP],Double,8
+71,SV00067,Pursuit of Novelty,Trends,[SVBAS15HP],Double,8
+72,SV00068,Pursuit of Originality,Trends,[SVBAS15HP],Double,8
+73,SV00069,Racial Fusion,Trends,[SVBAS15HP],Double,8
+74,SV00070,Rejection of Authority,Trends,[SVBAS15HP],Double,8
+75,SV00272,Rejection of Inequality,Trends,[SVBAS15HP],Double,8
+76,SV00072,Rejection of Orderliness,Trends,[SVBAS15HP],Double,8
+77,SV00073,Religion a la Carte,Trends,[SVBAS15HP],Double,8
+78,SV00074,Religiosity,Trends,[SVBAS15HP],Double,8
+79,SV00075,Saving on Principle,Trends,[SVBAS15HP],Double,8
+80,SV00076,Search for Roots,Trends,[SVBAS15HP],Double,8
+81,SV00077,Sensualism,Trends,[SVBAS15HP],Double,8
+82,SV00078,Sexism,Trends,[SVBAS15HP],Double,8
+83,SV00079,Sexual Permissiveness,Trends,[SVBAS15HP],Double,8
+84,SV00080,Skepticism Toward Small Business,Trends,[SVBAS15HP],Double,8
+85,SV00081,Skepticism Towards Advertising,Trends,[SVBAS15HP],Double,8
+86,SV00271,Social Darwinism,Trends,[SVBAS15HP],Double,8
+87,SV00083,Social Intimacy,Trends,[SVBAS15HP],Double,8
+88,SV00084,Social Learning,Trends,[SVBAS15HP],Double,8
+89,SV00085,Social Responsibility,Trends,[SVBAS15HP],Double,8
+90,SV00086,Spiritual Quest,Trends,[SVBAS15HP],Double,8
+91,SV00087,Status via Home,Trends,[SVBAS15HP],Double,8
+92,SV00088,Technology Anxiety,Trends,[SVBAS15HP],Double,8
+93,SV00089,Time Stress,Trends,[SVBAS15HP],Double,8
+94,SV00090,Traditional Family,Trends,[SVBAS15HP],Double,8
+95,SV00091,Utilitarian Consumerism,Trends,[SVBAS15HP],Double,8
+96,SV00092,Vitality,Trends,[SVBAS15HP],Double,8
+97,SV00093,Voluntary Simplicity,Trends,[SVBAS15HP],Double,8
+98,SV00094,Work Ethic,Trends,[SVBAS15HP],Double,8
+99,SV00095,Xenophobia,Trends,[SVBAS15HP],Double,8
+100,SV00098,Violence is a part of life. It's no big deal,Attitudes,[SVBAS15HP],Double,8
+101,SV00099,It's acceptable to use physical force to get something you really want. The important thing is to get what you want,Attitudes,[SVBAS15HP],Double,8
+102,SV00100,"When a person can't take it anymore and feels like he/she is about to explode, to be a little violent can relieve the tension. It's no big deal",Attitudes,[SVBAS15HP],Double,8
+103,SV00101,"It should be primarily government, not the private sector, that is concerned with solving the country's social problems",Attitudes,[SVBAS15HP],Double,8
+104,SV00102,"I like trying to take advantage of the unforeseen, of opportunities that present themselves",Attitudes,[SVBAS15HP],Double,8
+105,SV00103,I do not feel uncomfortable living with the uncertainties and the unexpected in life today,Attitudes,[SVBAS15HP],Double,8
+106,SV00104,It is not really a problem for me that life is becoming more and more complex,Attitudes,[SVBAS15HP],Double,8
+107,SV00107,"Generally speaking, I feel that I don't really have any goals in life",Attitudes,[SVBAS15HP],Double,8
+108,SV00108,I feel that I have little value as an individual in society,Attitudes,[SVBAS15HP],Double,8
+109,SV00109,My life is meaningless,Attitudes,[SVBAS15HP],Double,8
+110,SV00110,I like being in a large crowd,Attitudes,[SVBAS15HP],Double,8
+111,SV00111,"I like sharing major events (public & social events, gatherings, etc.)",Attitudes,[SVBAS15HP],Double,8
+112,SV00112,Life in the country is much more satisfying than in the city,Attitudes,[SVBAS15HP],Double,8
+113,SV00113,Being in contact with nature is very important to me,Attitudes,[SVBAS15HP],Double,8
+114,SV00114,Feel the need to be in tune with nature,Attitudes,[SVBAS15HP],Double,8
+115,SV00115,"I am prepared to pay more for brands, products and services that are truly authentic and based on traditional knowledge and skills",Attitudes,[SVBAS15HP],Double,8
+116,SV00116,"When I buy a brand, product or service, it is very important to me that I get a sense of the origin, country or place where it was created",Attitudes,[SVBAS15HP],Double,8
+117,SV00117,"I am prepared to pay more for brands, products and services that reflect the country or place they come from",Attitudes,[SVBAS15HP],Double,8
+118,SV00118,The fact that society is dividing into 'the haves' and the 'have nots' does not really bother me; it's just the way things are naturally evolving,Attitudes,[SVBAS15HP],Double,8
+119,SV00119,Often discussed the problems in your neighbourhood or municipality with people,Attitudes,[SVBAS15HP],Double,8
+120,SV00120,Often worked as a volunteer for a committee aimed at improving an aspect of life in your neighbourhood or municipality,Attitudes,[SVBAS15HP],Double,8
+121,SV00122,I always choose my clothes with great care,Attitudes,[SVBAS15HP],Double,8
+122,SV00123,It is important to look good,Attitudes,[SVBAS15HP],Double,8
+123,SV00124,"It is very likely that, if a product is widely advertised, it will be a good product",Attitudes,[SVBAS15HP],Double,8
+124,SV00125,Advertising is useful in helping me make a choice when buying,Attitudes,[SVBAS15HP],Double,8
+125,SV00126,Big businesses generally try to strike a fair balance between profits and the public interest,Attitudes,[SVBAS15HP],Double,8
+126,SV00127,Most small businesses do their best to provide high quality goods and services to their customers,Attitudes,[SVBAS15HP],Double,8
+127,SV00128,Small businesses generally try to strike a fair balance between profits and the public interest,Attitudes,[SVBAS15HP],Double,8
+128,SV00129,Often offer advice to people who consult me before they shop for certain items,Attitudes,[SVBAS15HP],Double,8
+129,SV00130,I feel that I have a great deal of influence on the consumption choices of the people around me,Attitudes,[SVBAS15HP],Double,8
+130,SV00131,There are definitely one or more areas which are of great interest to me and which encourage me to spend,Attitudes,[SVBAS15HP],Double,8
+131,SV00132,I experience a great deal of pleasure when I buy things in certain areas of special interest to me,Attitudes,[SVBAS15HP],Double,8
+132,SV00133,"For the areas which are of special interest to me, I make a point of keeping up-to-date with what is available on the market (by seeking out information, reading, etc.)",Attitudes,[SVBAS15HP],Double,8
+133,SV00135,I try to gather a lot of information about products before I make an important purchase,Attitudes,[SVBAS15HP],Double,8
+134,SV00136,I try to resist the tempting packaging and advertisements that attempt to make me buy things I don't really want,Attitudes,[SVBAS15HP],Double,8
+135,SV00137,It is important to fulfil your duties and obligations to others before pursuing your personal pleasure,Attitudes,[SVBAS15HP],Double,8
+136,SV00138,"I prefer: people who, whatever happens, do their duty",Attitudes,[SVBAS15HP],Double,8
+137,SV00139,"I prefer: people who pursue, above all, their own happiness",Attitudes,[SVBAS15HP],Double,8
+138,SV00140,It is acceptable that an industrial society such as ours produces a certain degree of pollution,Attitudes,[SVBAS15HP],Double,8
+139,SV00142,"To preserve peoples jobs in this country, we must accept higher degrees of pollution in the future",Attitudes,[SVBAS15HP],Double,8
+140,SV00144,I avoid using the services or products of companies which I consider to have a poor environmental record,Attitudes,[SVBAS15HP],Double,8
+141,SV00145,I am prepared to pay more for an environmentally friendly product,Attitudes,[SVBAS15HP],Double,8
+142,SV00146,I exercise to keep myself healthy and feeling good,Attitudes,[SVBAS15HP],Double,8
+143,SV00147,It is important to watch and take care of my health,Attitudes,[SVBAS15HP],Double,8
+144,SV00148,I am excited by the possibilities presented by the new technologies,Attitudes,[SVBAS15HP],Double,8
+145,SV00149,I always keep informed about the latest technological developments,Attitudes,[SVBAS15HP],Double,8
+146,SV00150,Young people today have too much freedom and not enough discipline,Attitudes,[SVBAS15HP],Double,8
+147,SV00151,Good parents make and enforce strict rules for their children,Attitudes,[SVBAS15HP],Double,8
+148,SV00152,Teenagers should have the same freedom as adults,Attitudes,[SVBAS15HP],Double,8
+149,SV00153,I would never buy products or services from a company if I knew that they discriminated against certain types of employees,Attitudes,[SVBAS15HP],Double,8
+150,SV00154,I would never buy products or services from a company if I knew that they did business in countries that violate human rights,Attitudes,[SVBAS15HP],Double,8
+151,SV00155,I would never buy products from a company if I knew that they tested their products on animals,Attitudes,[SVBAS15HP],Double,8
+152,SV00156,Feel that violence is all around us and that we must constantly be on the look out,Attitudes,[SVBAS15HP],Double,8
+153,SV00157,Your finances in the coming years will get worse,Attitudes,[SVBAS15HP],Double,8
+154,SV00158,Your finances in the coming years will improve,Attitudes,[SVBAS15HP],Double,8
+155,SV00159,"Compared to this time last year, your financial position is - More Secure",Attitudes,[SVBAS15HP],Double,8
+156,SV00160,"Compared to this time last year, your financial position is - Less Secure",Attitudes,[SVBAS15HP],Double,8
+157,SV00161,Looking at your personal future in the coming years - It will Improve,Attitudes,[SVBAS15HP],Double,8
+158,SV00162,Looking at your personal future in the coming years - It will Get Worse,Attitudes,[SVBAS15HP],Double,8
+159,SV00163,I am very concerned that I will not have enough money to live comfortably in the future,Attitudes,[SVBAS15HP],Double,8
+160,SV00164,Getting married and having children is the only real way of having a family,Attitudes,[SVBAS15HP],Double,8
+161,SV00165,Society should regard people of the same sex who live together as being the same as a married couple,Attitudes,[SVBAS15HP],Double,8
+162,SV00166,Society should regard people who live together without being married as being a family,Attitudes,[SVBAS15HP],Double,8
+163,SV00167,I would prefer: to do work that is in the public interest,Attitudes,[SVBAS15HP],Double,8
+164,SV00168,I would prefer: to make a lot of money in business,Attitudes,[SVBAS15HP],Double,8
+165,SV00169,"I would prefer: to do work that is not particularly interesting, but that pays well",Attitudes,[SVBAS15HP],Double,8
+166,SV00170,"I would prefer: to do work that is exciting, but does not pay very well",Attitudes,[SVBAS15HP],Double,8
+167,SV00171,"Feel what people in other countries are going through when I watch them on television (on the international news, for example)",Attitudes,[SVBAS15HP],Double,8
+168,SV00172,Feel that I am more a citizen of the world than a citizen of my country,Attitudes,[SVBAS15HP],Double,8
+169,SV00173,I am only interested in things that are useful; I couldn't care less about beauty for its own sake,Attitudes,[SVBAS15HP],Double,8
+170,SV00174,Brands are not important to me at all,Attitudes,[SVBAS15HP],Double,8
+171,SV00175,I have my favourite brand and I normally stick to it,Attitudes,[SVBAS15HP],Double,8
+172,SV00176,"I often buy things just because they are beautiful, whether or not they are practical",Attitudes,[SVBAS15HP],Double,8
+173,SV00177,"I would like to see more variations in colour, design and finish in the products I buy",Attitudes,[SVBAS15HP],Double,8
+174,SV00178,I am willing to pay more for brand-name products,Attitudes,[SVBAS15HP],Double,8
+175,SV00179,"When I buy a product, the brand is very important to me",Attitudes,[SVBAS15HP],Double,8
+176,SV00180,"Whatever the type of product, whenever I buy something, price is always very important",Attitudes,[SVBAS15HP],Double,8
+177,SV00182,I am interested in everything that science cannot explain,Attitudes,[SVBAS15HP],Double,8
+178,SV00183,I like to put myself in another persons shoes and to imagine how I would have felt in his/her place,Attitudes,[SVBAS15HP],Double,8
+179,SV00184,"I like to let my moods vary with my surroundings, the moments of the day, the weather",Attitudes,[SVBAS15HP],Double,8
+180,SV00186,"To spend, to buy myself something new, is for me one of the greatest pleasures in life",Attitudes,[SVBAS15HP],Double,8
+181,SV00187,I love to buy consumer goods (excluding those basic ones essential to run a household),Attitudes,[SVBAS15HP],Double,8
+182,SV00188,To buy myself something is always very gratifying for me,Attitudes,[SVBAS15HP],Double,8
+183,SV00189,I feel that people get what they deserve,Attitudes,[SVBAS15HP],Double,8
+184,SV00190,I have made plans for those I love after I die,Attitudes,[SVBAS15HP],Double,8
+185,SV00191,"It is one of my goals in life that, when I die, I leave as much money as I can to others such as my children or my family or to charitable organizations",Attitudes,[SVBAS15HP],Double,8
+186,SV00192,It is not at all important to me that I leave money to others when I die,Attitudes,[SVBAS15HP],Double,8
+187,SV00193,Racism in Canada is by and large a thing of the past,Attitudes,[SVBAS15HP],Double,8
+188,SV00195,We should do much more to learn about the customs and heritage of the racial and ethnic groups in this country,Attitudes,[SVBAS15HP],Double,8
+189,SV00197,It is important that the country should hold a strong position in the world,Attitudes,[SVBAS15HP],Double,8
+190,SV00198,"Even on vacation, I like to maintain regular contact with my duties or obligations back home",Attitudes,[SVBAS15HP],Double,8
+191,SV00199,It is important to me to regularly get away from all responsibilities and burdens,Attitudes,[SVBAS15HP],Double,8
+192,SV00200,It is important to me that people admire the things I own,Attitudes,[SVBAS15HP],Double,8
+193,SV00201,I need to feel that I have achieved a level of social success and that this is recognized by others,Attitudes,[SVBAS15HP],Double,8
+194,SV00202,We should show respect to people in positions of authority,Attitudes,[SVBAS15HP],Double,8
+195,SV00204,I believe: That young people should be taught to obey authority,Attitudes,[SVBAS15HP],Double,8
+196,SV00205,I believe: That young people should be taught to question authority,Attitudes,[SVBAS15HP],Double,8
+197,SV00207,The father of the family must be master in his own house,Attitudes,[SVBAS15HP],Double,8
+198,SV00208,"From time to time, Id like to do things that are dangerous or forbidden, just for the sake of the risk and the sensation",Attitudes,[SVBAS15HP],Double,8
+199,SV00209,"In order to get what I like, I would be prepared to take great risks in life",Attitudes,[SVBAS15HP],Double,8
+200,SV00210,"Once I start something, I stick with it until I am satisfied with the results",Attitudes,[SVBAS15HP],Double,8
+201,SV00211,I often do something simply to prove to myself that I am able,Attitudes,[SVBAS15HP],Double,8
+202,SV00212,"When I really want to do something, I almost always do it",Attitudes,[SVBAS15HP],Double,8
+203,SV00213,"No matter what I do, I have a lot of trouble changing the course of events that affect me",Attitudes,[SVBAS15HP],Double,8
+204,SV00214,"Whatever I do, my destiny is predetermined and history takes its course",Attitudes,[SVBAS15HP],Double,8
+205,SV00215,I have great confidence in my creative ability and my power of imagination,Attitudes,[SVBAS15HP],Double,8
+206,SV00216,"Creative, imaginative people - This reflects me",Attitudes,[SVBAS15HP],Double,8
+207,SV00217,It is important to be able to reveal your deep feelings to people you are close to,Attitudes,[SVBAS15HP],Double,8
+208,SV00218,It is important to be able to really communicate with people sincerely and spontaneously,Attitudes,[SVBAS15HP],Double,8
+209,SV00220,People who put their family above everything else - This reflects me,Attitudes,[SVBAS15HP],Double,8
+210,SV00222,I like to experience new emotions every day,Attitudes,[SVBAS15HP],Double,8
+211,SV00223,What one feels is more important than reason and logic,Attitudes,[SVBAS15HP],Double,8
+212,SV00224,I get pleasure out of letting myself go along with an impulse or passing emotions,Attitudes,[SVBAS15HP],Double,8
+213,SV00225,"As soon as I see an opportunity to try something new, I do it",Attitudes,[SVBAS15HP],Double,8
+214,SV00226,I like to be immediately informed of new products and services so that I can use them,Attitudes,[SVBAS15HP],Double,8
+215,SV00227,"It is important to try new products, new places for vacation, or new foods, just for the pleasure of the novelty",Attitudes,[SVBAS15HP],Double,8
+216,SV00228,I am prepared to pay more for products that are a bit different from those one sees all over,Attitudes,[SVBAS15HP],Double,8
+217,SV00229,I like the small details of my appearance and behaviour to make me stand out from others in a group,Attitudes,[SVBAS15HP],Double,8
+218,SV00230,"I prefer: people who act like everybody else, without trying to stand out",Attitudes,[SVBAS15HP],Double,8
+219,SV00231,I prefer: people who do not always feel obliged to be like everybody else and who show some originality in their dress or behaviour,Attitudes,[SVBAS15HP],Double,8
+220,SV00232,I would be happy if someone in my family married someone of a different race,Attitudes,[SVBAS15HP],Double,8
+221,SV00235,I would like to have a religious service at my funeral,Attitudes,[SVBAS15HP],Double,8
+222,SV00236,My religious beliefs are very important to me,Attitudes,[SVBAS15HP],Double,8
+223,SV00238,I consider myself to be a member of a religious faith,Attitudes,[SVBAS15HP],Double,8
+224,SV00239,Which of these two opinions about money do you hold? Money is for making and saving,Attitudes,[SVBAS15HP],Double,8
+225,SV00240,Which of these two opinions about money do you hold? Money is for spending and circulating,Attitudes,[SVBAS15HP],Double,8
+226,SV00242,I believe: Teach children to spend wisely and choose their purchases carefully,Attitudes,[SVBAS15HP],Double,8
+227,SV00243,"It is important to be thoroughly familiar with what I think of as my region, its history, its customs and its traditions",Attitudes,[SVBAS15HP],Double,8
+228,SV00245,"In a household where both partners are working, it is not right for the wife to earn more than the husband",Attitudes,[SVBAS15HP],Double,8
+229,SV00246,"Whatever people say, men have a certain natural superiority over women, and nothing can change this",Attitudes,[SVBAS15HP],Double,8
+230,SV00247,Pre-marital sex improves the later success of a marriage,Attitudes,[SVBAS15HP],Double,8
+231,SV00248,"It outrages me to see so many articles and pictures about sex in films, magazines and books",Attitudes,[SVBAS15HP],Double,8
+232,SV00249,An extramarital affair from time to time is not that serious,Attitudes,[SVBAS15HP],Double,8
+233,SV00253,I learn a great deal from meeting people who are different from me,Attitudes,[SVBAS15HP],Double,8
+234,SV00254,An indispensable way to learn is to be in touch and interact with very different kinds of people,Attitudes,[SVBAS15HP],Double,8
+235,SV00255,"If you want to learn and grow in life, it is essential to meet and converse with different kinds of people, who come from all kinds of backgrounds",Attitudes,[SVBAS15HP],Double,8
+236,SV00256,I believe: I have a personal responsibility to help those worse off than me,Attitudes,[SVBAS15HP],Double,8
+237,SV00257,I believe: I have enough trouble taking care of myself without worrying about the needs of the poor,Attitudes,[SVBAS15HP],Double,8
+238,SV00259,It is important to have a more intense and more spiritual inner life,Attitudes,[SVBAS15HP],Double,8
+239,SV00261,New technologies are causing more problems than they are solving,Attitudes,[SVBAS15HP],Double,8
+240,SV00262,Managing my time is one of my biggest challenges,Attitudes,[SVBAS15HP],Double,8
+241,SV00264,"Things are so hectic nowadays, it feels like a major victory when I accomplish everything I have to do",Attitudes,[SVBAS15HP],Double,8
+242,SV00265,"Compared to other people I know, I feel that I have a lot of energy",Attitudes,[SVBAS15HP],Double,8
+243,SV00267,Children have to be taught that to get ahead in life they have to work hard and make sacrifices,Attitudes,[SVBAS15HP],Double,8
+244,SV00268,"Overall, there is too much immigration. It threatens the purity of the country",Attitudes,[SVBAS15HP],Double,8
+245,SV00269,Non-whites should not be allowed to immigrate to our country,Attitudes,[SVBAS15HP],Double,8
+246,SV00270,Immigrants of different races and ethnic groups should set aside their cultural backgrounds and try to blend into the Canadian culture,Attitudes,[SVBAS15HP],Double,8
+247,SV00274,It worries me greatly that government and companies are storing more and more information about people’s private lives - Agree,Attitudes,[SVBAS15HP],Double,8
+248,SV00275,"If I could, I would not allow all kinds of databanks to store data about me - Agree",Attitudes,[SVBAS15HP],Double,8
+249,SV00277,How my personal information is STORED by companies and the government - Not Very Important,Attitudes,[SVBAS15HP],Double,8
+250,SV00278,How my personal information is STORED by companies and the government - Very Important,Attitudes,[SVBAS15HP],Double,8
+251,SV00279,Changing Importance: How my personal information is STORED by companies and the government - Not Very Important,Attitudes,[SVBAS15HP],Double,8
+252,SV00280,Changing Importance: How my personal information is STORED by companies and the government - Very Important,Attitudes,[SVBAS15HP],Double,8
+253,SV00281,How my personal information is USED by companies and the government - Not Very Important,Attitudes,[SVBAS15HP],Double,8
+254,SV00282,How my personal information is USED by companies and the government - Very Important,Attitudes,[SVBAS15HP],Double,8
+255,SV00283,Changing Importance: How my personal information is USED by companies and the government - Not Very Important,Attitudes,[SVBAS15HP],Double,8
+256,SV00284,Changing Importance: How my personal information is USED by companies and the government - Very Important,Attitudes,[SVBAS15HP],Double,8
+257,SV00285,"The only way our country can get through the crisis ahead is to get back to our traditional values, put tough leaders in power, and silence the troublemakers spreading bad ideas - Agree",Attitudes,[SVBAS15HP],Double,8
+258,SV00286,Our country will be destroyed someday if we do not smash the perversions eating away at our moral fiber and traditional beliefs - Agree,Attitudes,[SVBAS15HP],Double,8
+259,SV00287,"What our country really needs, instead of more civil rights, is a stiff dose of law and order - Agree",Attitudes,[SVBAS15HP],Double,8
+260,SV00288,Gays and lesbians are just as healthy and moral as anybody else - Agree,Attitudes,[SVBAS15HP],Double,8
+261,SV00289,Homosexuals and feminists should be praised for being brave enough to defy traditional family values - Agree,Attitudes,[SVBAS15HP],Double,8
+262,SV00290,"Everyone should have their own lifestyle, religious beliefs, and sexual preferences, even if it makes them different from everyone else - Agree",Attitudes,[SVBAS15HP],Double,8
+263,SV00291,I think I’m better than most people at taking advantage of the opportunities and avoiding threats that are out there in the world - Agree,Attitudes,[SVBAS15HP],Double,8
+264,SV00292,I like to be in complex situations that challenge me to figure out how to come out ahead - Agree,Attitudes,[SVBAS15HP],Double,8
+265,SV00293,Society should regard a same-sex couple as being the same as any other couple,Attitudes,[SVBAS15HP],Double,8
+266,SV00294,I take steps to protect my personal information online from being used in ways I did not agree to,Attitudes,[SVBAS15HP],Double,8
+267,SV00295,Most so-called conspiracy theories you read about are true - Agree,Attitudes,[SVBAS15HP],Double,8
+268,SV00296,There are powerful hidden groups who control much of what goes on in this country,Attitudes,[SVBAS15HP],Double,8
+269,SV00297,"These days everybody is out for themselves; no one does anything unless they stand to gain something (whether personal, emotional or financial)",Attitudes,[SVBAS15HP],Double,8
+270,SV00298,The system is completely stacked against the average person in this day and age,Attitudes,[SVBAS15HP],Double,8
+271,SV00299,I deserve better outcomes in life than many people I know,Attitudes,[SVBAS15HP],Double,8
+272,SV00300,"I’m no longer excited by 'things' – the ability to have meaningful experiences, to discover ideas, and 'play' are much more valuable than consuming and owning 'stuff'",Attitudes,[SVBAS15HP],Double,8

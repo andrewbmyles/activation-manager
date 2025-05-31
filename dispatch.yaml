@@ -1,0 +1,12 @@
+dispatch:
+  - url: "*/api/*"
+    service: activation-backend
+  
+  - url: "activation.tobermory.ai/*"
+    service: activation-manager
+  
+  - url: "tobermory.ai/*"
+    service: default
+  
+  - url: "*/*"
+    service: default

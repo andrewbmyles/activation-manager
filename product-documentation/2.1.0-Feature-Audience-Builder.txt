@@ -1,0 +1,33 @@
+FEATURE 2.1.0: AUDIENCE BUILDER WITH CRITERIA MANAGEMENT
+========================================================
+
+Feature Description:
+Create a sophisticated audience builder interface that allows users to define audience segments using multiple criteria with a visual query builder. Support complex segmentation with intuitive controls and real-time feedback.
+
+Acceptance Criteria:
+- Visual criteria builder with add/remove functionality
+- Support for multiple criteria with AND logic
+- Dynamic form inputs based on variable type
+- Real-time audience size estimation
+- Save and name audience segments
+- Edit existing audiences
+- Form validation and error handling
+- Responsive design for desktop and tablet
+
+Related Epic: 2.0.0 - Audience Management and Segmentation
+
+Priority: P0 - Critical
+
+Size: Extra Large (21 story points)
+
+Dependencies:
+- Variable metadata structure defined
+- Design system components available
+- API contracts for audience sizing
+
+Technical Considerations:
+- Performance optimization for large criteria sets
+- Form state management with React Hook Form
+- Debounced audience size calculations
+- Accessibility for complex forms
+- Undo/redo functionality consideration
